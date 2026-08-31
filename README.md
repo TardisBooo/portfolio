@@ -1,16 +1,17 @@
-# Tardis · Portfolio
+# Tardis · Public Resume
 
-A bilingual, profile-first portfolio for an industrial software engineer and
-independent AI systems developer.
+A bilingual, profile-first public resume for an industrial software engineer
+and independent AI systems developer with a background in applied AI research.
 
-The page is organized as personal profile → education → seven-paper research
-record → anonymized experience → inspectable product and code surfaces. ViewAtom
-is shown through its live Agent product pages; the public source links point to
-repositories that are safe to inspect.
+The page follows a resume sequence: profile → education → research →
+experience → selected projects. Project cards link to live product surfaces,
+public repositories, course pages, or local-evidence screenshots where the
+source is intentionally private.
 
-Deploy `index.html` and `style.css` with GitHub Pages. The page intentionally
-does not contain employer names, company-internal code, location details, or
-private deployment URLs.
+Public constraints:
 
-Use `?lang=en` or `?lang=zh` to preview a language directly. The language
-selection is also remembered in the browser.
+- Use `Tardis` only; do not expose employer names, location, phone, or email.
+- ViewAtom is presented as one Web/iOS/backend Agent product surface.
+- AgentTect is represented by screenshots only.
+- Only owned projects and clearly labelled anonymized work are included.
+- Use `?lang=en` or `?lang=zh` to switch language.

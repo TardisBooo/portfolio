@@ -1,169 +1,221 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tardis — industrial software engineer, AI researcher, and independent AI developer." />
-  <meta name="theme-color" content="#f5faf4" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tardis — industrial software engineer, independent AI systems developer, and applied AI researcher." />
+  <meta name="theme-color" content="#f7faf7" />
   <link rel="stylesheet" href="style.css" />
-  <title>Tardis · AI systems, research, products</title>
+  <title>Tardis · public resume</title>
 </head>
 <body data-lang="en">
-  <a class="skip-link" href="#profile"><span class="lang-en">Skip to content</span><span class="lang-zh">跳到主要内容</span></a>
+  <a class="skip-link" href="#main-content">
+    <span class="lang-en">Skip to content</span>
+    <span class="lang-zh">跳到主要内容</span>
+  </a>
 
-  <header class="site-header shell">
-    <a class="brand" href="#profile" aria-label="Tardis home"><span class="brand-mark">T</span><span>Tardis</span></a>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#profile"><span class="lang-en">Profile</span><span class="lang-zh">个人信息</span></a>
-      <a href="#education"><span class="lang-en">Education</span><span class="lang-zh">教育</span></a>
-      <a href="#research"><span class="lang-en">Research</span><span class="lang-zh">研究</span></a>
-      <a href="#experience"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
-      <a href="#projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#profile" aria-label="Tardis home">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span class="brand-name">Tardis</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link is-current" href="#profile"><span class="lang-en">Profile</span><span class="lang-zh">个人信息</span></a>
+        <a class="nav-link" href="#education"><span class="lang-en">Education</span><span class="lang-zh">教育</span></a>
+        <a class="nav-link" href="#research"><span class="lang-en">Research</span><span class="lang-zh">研究</span></a>
+        <a class="nav-link" href="#experience"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
+        <a class="nav-link" href="#projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
+      </nav>
       <div class="header-actions">
         <div class="language-switch" aria-label="Language switcher">
           <button type="button" class="language-button is-active" data-language="en" aria-pressed="true">EN</button>
-          <button type="button" class="language-button" data-language="zh" aria-pressed="false">中</button>
+          <button type="button" class="language-button" data-language="zh" aria-pressed="false">中文</button>
         </div>
-        <a class="nav-cta" href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="header-link" href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
-    </nav>
+    </div>
   </header>
 
   <main id="main-content">
-    <section class="hero shell" id="profile">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span><span class="lang-en">AI systems engineer · independent AI developer</span><span class="lang-zh">AI 系统工程师 · 独立 AI 开发者</span></p>
-        <h1><span class="lang-en">Research-led.<br /><em>Built to run.</em></span><span class="lang-zh">研究为底。<br /><em>落地为终。</em></span></h1>
-        <p class="hero-intro"><span class="lang-en">Industrial software engineer with AI research experience. I build agent products and performance-minded systems that can be opened, tested, and understood.</span><span class="lang-zh">工业软件工程师，具备 AI 研究经历。我构建可以打开、验证和理解的 Agent 产品与高性能系统。</span></p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects"><span class="lang-en">Explore the work</span><span class="lang-zh">查看项目</span><span aria-hidden="true">↓</span></a>
-          <a class="button button-secondary" href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer"><span class="lang-en">Research profile</span><span class="lang-zh">研究主页</span><span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-proof" aria-label="Profile highlights">
-          <div><strong>7</strong><span class="lang-en">publications</span><span class="lang-zh">篇论文</span></div>
-          <div><strong>C++ / Python</strong><span class="lang-en">systems + AI</span><span class="lang-zh">系统 + AI</span></div>
-          <div><strong>Web + iOS</strong><span class="lang-en">product delivery</span><span class="lang-zh">产品交付</span></div>
+    <section class="profile-hero shell" id="profile" aria-labelledby="profile-title">
+      <div class="profile-hero-main">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span class="lang-en">PUBLIC RESUME / 2026</span><span class="lang-zh">公开履历 / 2026</span></p>
+        <h1 id="profile-title">Tardis</h1>
+        <p class="profile-headline"><span class="lang-en">Industrial software engineer and independent AI systems developer with a background in applied AI research.</span><span class="lang-zh">工业软件工程师与独立 AI 系统开发者，具备应用 AI 研究背景。</span></p>
+        <p class="profile-summary"><span class="lang-en">I build AI products and performance-critical systems that can be run, inspected, and improved. My work connects agent workflows, applied machine learning, and modern C++ engineering.</span><span class="lang-zh">我构建可运行、可检查、可持续改进的 AI 产品与高性能系统，连接 Agent 工作流、应用机器学习和现代 C++ 工程。</span></p>
+        <div class="profile-actions">
+          <a class="button button-primary" href="#projects"><span class="lang-en">View selected work</span><span class="lang-zh">查看精选项目</span><span aria-hidden="true">↘</span></a>
+          <a class="button button-secondary" href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer"><span class="lang-en">Open research profile</span><span class="lang-zh">打开研究主页</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
-      <aside class="identity-card" aria-label="Public profile identity">
-        <div class="identity-card-top"><span class="card-label"><span class="lang-en">Public profile</span><span class="lang-zh">公开档案</span></span><span class="card-index">01 / 05</span></div>
-        <div class="identity-stage" aria-hidden="true"><div class="identity-ring identity-ring-one"></div><div class="identity-ring identity-ring-two"></div><div class="identity-letter">T</div><span class="identity-orbit orbit-one"></span><span class="identity-orbit orbit-two"></span></div>
-        <div class="identity-card-bottom"><div><span class="card-label">Tardis</span><strong><span class="lang-en">AI systems<br />& applied research</span><span class="lang-zh">AI 系统<br />与应用研究</span></strong></div><div class="identity-arrow" aria-hidden="true">↘</div></div>
+      <aside class="profile-aside" aria-label="Profile facts">
+        <div class="aside-heading"><span class="lang-en">At a glance</span><span class="lang-zh">快速了解</span><span class="aside-index">01</span></div>
+        <dl class="facts-list">
+          <div><dt><span class="lang-en">Focus</span><span class="lang-zh">方向</span></dt><dd><span class="lang-en">AI systems · agent products</span><span class="lang-zh">AI 系统 · Agent 产品</span></dd></div>
+          <div><dt><span class="lang-en">Engineering</span><span class="lang-zh">工程</span></dt><dd><span class="lang-en">C++ · industrial software</span><span class="lang-zh">C++ · 工业软件</span></dd></div>
+          <div><dt><span class="lang-en">Research</span><span class="lang-zh">研究</span></dt><dd><span class="lang-en">Applied ML · computer vision</span><span class="lang-zh">应用 ML · 计算机视觉</span></dd></div>
+          <div><dt><span class="lang-en">Public proof</span><span class="lang-zh">公开证据</span></dt><dd><span class="lang-en">7 papers · live products · source</span><span class="lang-zh">7 篇论文 · 在线产品 · 源码</span></dd></div>
+        </dl>
       </aside>
     </section>
 
-    <section class="profile-section shell section-divider" aria-labelledby="profile-heading">
-      <div class="section-lead">
-        <p class="section-label"><span class="lang-en">Profile</span><span class="lang-zh">个人信息</span></p>
-        <h2 id="profile-heading"><span class="lang-en">A small public<br /><em>surface.</em></span><span class="lang-zh">一份简洁的<br /><em>公开档案。</em></span></h2>
-        <p><span class="lang-en">Industrial software, AI research, and independent product work meet here. The public record stays focused on what can be inspected.</span><span class="lang-zh">这里汇集工业软件、AI 研究和独立产品实践。公开内容只保留可以被核验的工作。</span></p>
-      </div>
-      <dl class="profile-facts">
-        <div><dt><span class="lang-en">Public name</span><span class="lang-zh">公开名称</span></dt><dd>Tardis</dd></div>
-        <div><dt><span class="lang-en">Primary direction</span><span class="lang-zh">主要方向</span></dt><dd><span class="lang-en">AI systems & agent products</span><span class="lang-zh">AI 系统与 Agent 产品</span></dd></div>
-        <div><dt><span class="lang-en">Engineering base</span><span class="lang-zh">工程基础</span></dt><dd><span class="lang-en">C++ systems & industrial software</span><span class="lang-zh">C++ 系统与工业软件</span></dd></div>
-        <div><dt><span class="lang-en">Research base</span><span class="lang-zh">研究基础</span></dt><dd><span class="lang-en">Applied ML & computer vision</span><span class="lang-zh">应用机器学习与计算机视觉</span></dd></div>
-        <div><dt><span class="lang-en">Product surface</span><span class="lang-zh">产品形态</span></dt><dd><span class="lang-en">Web, iOS, APIs, live demos</span><span class="lang-zh">Web、iOS、API、在线 Demo</span></dd></div>
-        <div><dt><span class="lang-en">Proof trail</span><span class="lang-zh">核验路径</span></dt><dd><span class="lang-en">Source, papers, product surfaces</span><span class="lang-zh">代码、论文与真实产品</span></dd></div>
-      </dl>
-    </section>
-
-    <section class="section education-section shell" id="education" aria-labelledby="education-heading">
-      <div class="section-lead narrow-lead">
-        <p class="section-label"><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></p>
-        <h2 id="education-heading"><span class="lang-en">A research<br /><em>foundation.</em></span><span class="lang-zh">从研究出发，<br /><em>向工程落地。</em></span></h2>
-        <p><span class="lang-en">Formal training in computer technology and electronic information science.</span><span class="lang-zh">计算机技术与电子信息科学的学习背景，构成后续系统与 AI 实践的基础。</span></p>
+    <section class="resume-section shell" id="education" aria-labelledby="education-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label"><span class="lang-en">01 / Education</span><span class="lang-zh">01 / 教育经历</span></p>
+          <h2 id="education-title"><span class="lang-en">A research foundation</span><span class="lang-zh">研究与工程的基础</span></h2>
+        </div>
+        <p class="section-note"><span class="lang-en">Computer technology and electronic information science.</span><span class="lang-zh">计算机技术与电子信息科学的学习背景。</span></p>
       </div>
       <div class="education-list">
-        <article class="education-entry"><time datetime="2020-08">2020 — 2023</time><div><h3><span class="lang-en">M.S. in Computer Technology</span><span class="lang-zh">计算机技术硕士</span></h3><p>Jinan University · 暨南大学</p></div><span class="entry-mark">01</span></article>
-        <article class="education-entry"><time datetime="2016-08">2016 — 2020</time><div><h3><span class="lang-en">B.S. in Electronic Information Science and Technology</span><span class="lang-zh">电子信息科学与技术本科</span></h3><p>Jinan University · 暨南大学</p></div><span class="entry-mark">02</span></article>
+        <article class="education-item">
+          <div class="item-index">01</div>
+          <div class="item-body"><h3><span class="lang-en">M.S. in Computer Technology</span><span class="lang-zh">计算机技术硕士</span></h3><p>Jinan University · 暨南大学</p></div>
+          <time datetime="2020-08">2020 — 2023</time>
+        </article>
+        <article class="education-item">
+          <div class="item-index">02</div>
+          <div class="item-body"><h3><span class="lang-en">B.S. in Electronic Information Science and Technology</span><span class="lang-zh">电子信息科学与技术本科</span></h3><p>Jinan University · 暨南大学</p></div>
+          <time datetime="2016-08">2016 — 2020</time>
+        </article>
       </div>
     </section>
 
-    <section class="section research-section shell" id="research" aria-labelledby="research-heading">
-      <div class="section-lead research-lead">
-        <p class="section-label"><span class="lang-en">Research record</span><span class="lang-zh">研究成果</span></p>
-        <h2 id="research-heading"><span class="lang-en">Seven papers.<br /><em>One trail.</em></span><span class="lang-zh">七篇论文。<br /><em>一条研究轨迹。</em></span></h2>
-        <p><span class="lang-en">Work across medical imaging, biomedical data, forecasting, Android security, financial prediction, and applied machine learning.</span><span class="lang-zh">研究覆盖医学影像、生物医学数据、预测、Android 安全、金融预测与应用机器学习。</span></p>
-        <a class="text-action" href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer"><span class="lang-en">Open ResearchGate profile</span><span class="lang-zh">打开 ResearchGate 主页</span><span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="publication-grid">
-        <a class="publication-card publication-card-featured" href="https://www.researchgate.net/publication/368972486_ColorMedGAN_A_Semantic_Colorization_Framework_for_Medical_Images" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2023</span><span>Applied Sciences</span></div><h3>ColorMedGAN: A Semantic Colorization Framework for Medical Images</h3><span class="publication-link"><span class="lang-en">Read paper on ResearchGate</span><span class="lang-zh">在 ResearchGate 阅读</span><b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/366380503_Feature_selection_methods_for_high-dimensional_biomedical_time-to-event_data_a_review" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2022</span><span>ICBDT</span></div><h3>Feature selection methods for high-dimensional biomedical time-to-event data: a review</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/365990459_Tax_service_volume_forecasting_based_on_informer" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2022</span><span>CAICE</span></div><h3>Tax service volume forecasting based on informer</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/361956569_Contrast-enhanced_CT_Image_Synthesis_of_Thyroid_Based_on_Transfomer_and_Texture_Branching" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2022</span><span><span class="lang-en">Medical imaging</span><span class="lang-zh">医学影像</span></span></div><h3>Contrast-enhanced CT Image Synthesis of Thyroid Based on Transfomer and Texture Branching</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/359750675_Avpd_An_Anti-virus_Model_with_Remote_Thread_Injection_for_Android_Based_on_ResNet50" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2022</span><span><span class="lang-en">Android security</span><span class="lang-zh">Android 安全</span></span></div><h3>Avpd: An Anti-virus Model with Remote Thread Injection for Android Based on ResNet50</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/358944938_ISSPM_A_stock_prediction_model_incorporating_investor_sentiment_calculations_based_on_fusedmax" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2021</span><span>ICCSS</span></div><h3>ISSPM: A stock prediction model incorporating investor sentiment calculations based on fusedmax</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-        <a class="publication-card" href="https://www.researchgate.net/publication/354889981_Machine_learning_distribution_model_and_auxiliary_diagnosis_system_based_on_pathological_sections_from_multiple_parts_of_human_beings" target="_blank" rel="noreferrer"><div class="publication-meta"><span>2021</span><span><span class="lang-en">Medical AI</span><span class="lang-zh">医疗 AI</span></span></div><h3>Machine learning distribution model and auxiliary diagnosis system based on pathological sections from multiple parts of human beings</h3><span class="publication-link">ResearchGate <b aria-hidden="true">↗</b></span></a>
-      </div>
-    </section>
-
-    <section class="section experience-section" id="experience" aria-labelledby="experience-heading">
-      <div class="experience-inner shell">
-        <div class="section-lead">
-          <p class="section-label"><span class="lang-en">Experience</span><span class="lang-zh">工作经历</span></p>
-          <h2 id="experience-heading"><span class="lang-en">Engineering where<br /><em>systems matter.</em></span><span class="lang-zh">在系统真正重要的<br /><em>地方做工程。</em></span></h2>
-          <p><span class="lang-en">Company names and location details stay private here. The roles, time span, and technical work remain visible.</span><span class="lang-zh">这里隐藏公司名称和地区信息，但保留角色、时间和技术工作，方便理解经验轨迹。</span></p>
+    <section class="resume-section shell" id="research" aria-labelledby="research-title">
+      <div class="section-heading section-heading-research">
+        <div>
+          <p class="section-label"><span class="lang-en">02 / Research</span><span class="lang-zh">02 / 研究成果</span></p>
+          <h2 id="research-title"><span class="lang-en">Seven papers, one visible record</span><span class="lang-zh">七篇论文，一条可核验的研究记录</span></h2>
         </div>
-        <div class="experience-list">
-          <article class="experience-entry"><div class="experience-time">2023 — now</div><div class="experience-main"><h3><span class="lang-en">Industrial software company</span><span class="lang-zh">工业软件公司</span></h3><p class="experience-role"><span class="lang-en">C++ Engineer</span><span class="lang-zh">C++ 工程师</span></p><p><span class="lang-en">Build and optimize BIM/CAD systems for data management, business queries, scene capture, graphics export, and display performance.</span><span class="lang-zh">负责 BIM/CAD 数据管理、业务查询、场景捕获、图形导出和显示性能相关 C++ 系统开发。</span></p><div class="tag-row"><span>C++</span><span>CAD / BIM</span><span><span class="lang-en">Performance</span><span class="lang-zh">性能优化</span></span></div></div></article>
-          <article class="experience-entry"><div class="experience-time">2022.07 — 08</div><div class="experience-main"><h3><span class="lang-en">Game development team</span><span class="lang-zh">游戏开发团队</span></h3><p class="experience-role"><span class="lang-en">Game Development Intern</span><span class="lang-zh">游戏开发实习生</span></p><p><span class="lang-en">Contributed to game-development tasks and supporting implementation work in a production team environment.</span><span class="lang-zh">参与游戏开发相关功能和配套实现，熟悉生产团队中的协作与交付流程。</span></p><div class="tag-row"><span><span class="lang-en">Game development</span><span class="lang-zh">游戏开发</span></span><span><span class="lang-en">Team delivery</span><span class="lang-zh">团队交付</span></span></div></div></article>
-          <article class="experience-entry"><div class="experience-time">2021</div><div class="experience-main"><h3><span class="lang-en">Consumer electronics company</span><span class="lang-zh">消费电子公司</span></h3><p class="experience-role"><span class="lang-en">Algorithm Intern</span><span class="lang-zh">算法实习生</span></p><p><span class="lang-en">Built data, training, and evaluation workflows for gesture and face computer vision; worked on tracking, quantization-oriented optimization, and model-driven animation prototypes.</span><span class="lang-zh">参与手势与人脸视觉模型的数据、训练和评测流程，以及跟踪、面向量化的优化和模型驱动动画原型。</span></p><div class="tag-row"><span><span class="lang-en">Computer vision</span><span class="lang-zh">计算机视觉</span></span><span>PyTorch</span><span><span class="lang-en">Tracking</span><span class="lang-zh">跟踪</span></span></div></div></article>
-          <article class="experience-entry"><div class="experience-time">2020.04 — 06</div><div class="experience-main"><h3><span class="lang-en">Software company</span><span class="lang-zh">软件公司</span></h3><p class="experience-role"><span class="lang-en">Game Tools Intern</span><span class="lang-zh">游戏工具实习生</span></p><p><span class="lang-en">Developed Python/Qt tools for a game-engine workflow and prototyped monocular 3D face reconstruction with StyleGAN-based texture transfer.</span><span class="lang-zh">使用 Python/Qt 开发游戏引擎工作流工具，参与单目 3D 人脸重建和基于 StyleGAN 的纹理风格迁移原型。</span></p><div class="tag-row"><span>Python / Qt</span><span>3D vision</span><span>StyleGAN</span></div></div></article>
+        <div class="section-note section-note-actions">
+          <p><span class="lang-en">Medical imaging, biomedical data, forecasting, security, and applied machine learning.</span><span class="lang-zh">覆盖医学影像、生物医学数据、预测、安全和应用机器学习。</span></p>
+          <a class="text-link" href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer"><span class="lang-en">Open ResearchGate profile</span><span class="lang-zh">打开 ResearchGate 主页</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
+      <div class="publication-list">
+        <a class="publication-item publication-item-featured" href="https://www.researchgate.net/publication/368972486_ColorMedGAN_A_Semantic_Colorization_Framework_for_Medical_Images" target="_blank" rel="noreferrer">
+          <span class="publication-year">2023</span><span class="publication-copy"><strong>ColorMedGAN: A Semantic Colorization Framework for Medical Images</strong><small>Applied Sciences</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/366380503_Feature_selection_methods_for_high-dimensional_biomedical_time-to-event_data_a_review" target="_blank" rel="noreferrer">
+          <span class="publication-year">2022</span><span class="publication-copy"><strong>Feature selection methods for high-dimensional biomedical time-to-event data: a review</strong><small>ICBDT</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/365990459_Tax_service_volume_forecasting_based_on_informer" target="_blank" rel="noreferrer">
+          <span class="publication-year">2022</span><span class="publication-copy"><strong>Tax service volume forecasting based on informer</strong><small>CAICE</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/361956569_Contrast-enhanced_CT_Image_Synthesis_of_Thyroid_Based_on_Transfomer_and_Texture_Branching" target="_blank" rel="noreferrer">
+          <span class="publication-year">2022</span><span class="publication-copy"><strong>Contrast-enhanced CT Image Synthesis of Thyroid Based on Transfomer and Texture Branching</strong><small>Medical imaging</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/359750675_Avpd_An_Anti-virus_Model_with_Remote_Thread_Injection_for_Android_Based_on_ResNet50" target="_blank" rel="noreferrer">
+          <span class="publication-year">2022</span><span class="publication-copy"><strong>Avpd: An Anti-virus Model with Remote Thread Injection for Android Based on ResNet50</strong><small>Android security</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/358944938_ISSPM_A_stock_prediction_model_incorporating_investor_sentiment_calculations_based_on_fusedmax" target="_blank" rel="noreferrer">
+          <span class="publication-year">2021</span><span class="publication-copy"><strong>ISSPM: A stock prediction model incorporating investor sentiment calculations based on fusedmax</strong><small>ICCSS</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="publication-item" href="https://www.researchgate.net/publication/354889981_Machine_learning_distribution_model_and_auxiliary_diagnosis_system_based_on_pathological_sections_from_multiple_parts_of_human_beings" target="_blank" rel="noreferrer">
+          <span class="publication-year">2021</span><span class="publication-copy"><strong>Machine learning distribution model and auxiliary diagnosis system based on pathological sections from multiple parts of human beings</strong><small>Applied machine learning</small></span><span class="publication-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
 
-    <section class="section projects-section shell" id="projects" aria-labelledby="projects-heading">
-      <div class="section-lead projects-lead">
-        <p class="section-label"><span class="lang-en">Selected work</span><span class="lang-zh">精选项目</span></p>
-        <h2 id="projects-heading"><span class="lang-en">Open products,<br /><em>visible systems.</em></span><span class="lang-zh">打开产品，<br /><em>看见系统。</em></span></h2>
-        <p><span class="lang-en">Real product surfaces first. Source and engineering detail follow where they are public and safe to inspect.</span><span class="lang-zh">先看真实产品，再看可以公开核验的代码与工程细节。</span></p>
+    <section class="resume-section shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-label"><span class="lang-en">03 / Experience</span><span class="lang-zh">03 / 工作与实习经历</span></p>
+          <h2 id="experience-title"><span class="lang-en">Systems work in context</span><span class="lang-zh">在真实场景中做系统工程</span></h2>
+        </div>
+        <p class="section-note"><span class="lang-en">Company names and location details are intentionally omitted from this public page.</span><span class="lang-zh">公开页面有意隐藏公司名称和地区信息。</span></p>
       </div>
-
-      <article class="product-feature">
-        <div class="product-feature-copy"><p class="project-kicker"><span class="lang-en">Live agent product</span><span class="lang-zh">在线 Agent 产品</span></p><h3>ViewAtom</h3><p class="product-summary"><span class="lang-en">An agent-centered research product that turns live signals into structured, inspectable surfaces.</span><span class="lang-zh">以 Agent 为核心的研究产品，将实时信号整理成结构化、可检查的研究界面。</span></p><p class="product-detail"><span class="lang-en">Explore the public product through topic tracking, agent analysis, and an industry-chain decision map. The Web and iOS surfaces are presented as one product trail.</span><span class="lang-zh">通过热点追踪、Agent 分析和产业链决策图查看在线产品。Web 与 iOS 作为同一条产品体验链展示。</span></p><div class="project-actions"><a class="button button-primary" href="https://viewatom.com/hot-topics" target="_blank" rel="noreferrer"><span class="lang-en">Open agent surface</span><span class="lang-zh">打开 Agent 页面</span><span aria-hidden="true">↗</span></a><a class="text-action" href="https://viewatom.com/ai-chain-decision-map" target="_blank" rel="noreferrer"><span class="lang-en">Open decision map</span><span class="lang-zh">打开决策图</span><span aria-hidden="true">↗</span></a></div></div>
-        <div class="product-gallery viewatom-gallery"><a href="https://viewatom.com/hot-topics" target="_blank" rel="noreferrer"><img src="assets/viewatom-hot-topics.png" alt="ViewAtom hot topics agent research surface" data-alt-en="ViewAtom hot topics agent research surface" data-alt-zh="ViewAtom 热点追踪 Agent 研究页面" loading="lazy" /></a><a href="https://viewatom.com/ai-chain-decision-map" target="_blank" rel="noreferrer"><img src="assets/viewatom-decision-map.png" alt="ViewAtom industry-chain decision map" data-alt-en="ViewAtom industry-chain decision map" data-alt-zh="ViewAtom 产业链决策图页面" loading="lazy" /></a></div>
-      </article>
-
-      <div class="project-grid">
-        <article class="project-card project-card-wide"><div class="project-card-copy"><p class="project-kicker"><span class="lang-en">Course homepage · runnable lab</span><span class="lang-zh">课程首页 · 可运行实验</span></p><h3>ML Serving Contract Lab</h3><p><span class="lang-en">A hands-on course for making inference contracts testable before a real model arrives.</span><span class="lang-zh">一门围绕推理服务契约的实践课程，在真正接入模型之前先把接口、流式行为和失败边界变得可测试。</span></p><div class="tag-row"><span><span class="lang-en">Course</span><span class="lang-zh">课程</span></span><span>FastAPI</span><span><span class="lang-en">Streaming</span><span class="lang-zh">流式</span></span><span><span class="lang-en">Observability</span><span class="lang-zh">可观测性</span></span></div><div class="project-actions"><a class="text-action" href="https://tardisbooo.github.io/ml-serving-contract-lab/" target="_blank" rel="noreferrer"><span class="lang-en">Open course home</span><span class="lang-zh">打开课程首页</span><span aria-hidden="true">↗</span></a><a class="text-action muted-action" href="https://github.com/TardisBooo/ml-serving-contract-lab" target="_blank" rel="noreferrer"><span class="lang-en">Read source</span><span class="lang-zh">查看源码</span><span aria-hidden="true">↗</span></a></div></div><figure class="project-media"><img src="assets/ml-serving-course-home.png" alt="ML Serving Contract Lab course homepage" data-alt-en="ML Serving Contract Lab course homepage" data-alt-zh="ML Serving Contract Lab 课程首页" loading="lazy" /><figcaption><span class="lang-en">The course path, contract surface, and local run entry point.</span><span class="lang-zh">课程路径、契约界面与本地运行入口。</span></figcaption></figure></article>
-        <article class="project-card"><figure class="project-media project-media-light"><img src="assets/skillanything-demo.gif" alt="SkillAnything demo" data-alt-en="SkillAnything demo moving through source collection, distillation, and evidence review" data-alt-zh="SkillAnything 从素材采集到蒸馏与证据审阅的演示" loading="lazy" /><figcaption><span class="lang-en">Public workbench edition</span><span class="lang-zh">公开工作台版本</span></figcaption></figure><p class="project-kicker"><span class="lang-en">Open-source workbench</span><span class="lang-zh">开源工作台</span></p><h3>SkillAnything</h3><p><span class="lang-en">Turn source material into reusable, evidence-linked agent skills with a local-first pipeline.</span><span class="lang-zh">通过 local-first 流程，将素材整理成可复用、带证据关联的 Agent Skill。</span></p><div class="project-actions project-actions-bottom"><a class="text-action" href="https://tardisbooo.github.io/SkillAnything/" target="_blank" rel="noreferrer"><span class="lang-en">Open demo</span><span class="lang-zh">打开 Demo</span><span aria-hidden="true">↗</span></a><a class="text-action muted-action" href="https://github.com/TardisBooo/SkillAnything" target="_blank" rel="noreferrer"><span class="lang-en">GitHub</span><span class="lang-zh">GitHub</span><span aria-hidden="true">↗</span></a></div></article>
-        <article class="project-card"><figure class="project-media project-media-report"><img src="assets/memory-pool-report.png" alt="C++ Memory Pool Benchmark static report" data-alt-en="C++ Memory Pool Benchmark static report" data-alt-zh="C++ Memory Pool Benchmark 静态报告" loading="lazy" /><figcaption><span class="lang-en">Generated from the local benchmark CLI</span><span class="lang-zh">由本地 benchmark CLI 生成</span></figcaption></figure><p class="project-kicker"><span class="lang-en">C++ systems demo</span><span class="lang-zh">C++ 系统工程 Demo</span></p><h3>C++ Memory Pool Benchmark</h3><p><span class="lang-en">Layered allocation, ownership states, contention, cross-thread release, and large-run reuse with reviewable reports.</span><span class="lang-zh">分层分配、所有权状态、竞争、跨线程释放和大对象复用，并生成可核验报告。</span></p><div class="project-actions project-actions-bottom"><a class="text-action" href="https://github.com/TardisBooo/cpp-memory-pool-benchmark" target="_blank" rel="noreferrer"><span class="lang-en">Read source</span><span class="lang-zh">查看源码</span><span aria-hidden="true">↗</span></a></div></article>
-        <article class="project-card project-card-case"><div class="case-number">03</div><p class="project-kicker"><span class="lang-en">Private work · anonymized case</span><span class="lang-zh">私有经历 · 脱敏案例</span></p><h3><span class="lang-en">CAD systems<br /><em>and DSLs.</em></span><span class="lang-zh">CAD 系统<br /><em>与 DSL。</em></span></h3><p><span class="lang-en">Property frameworks, command extension, rule checking, compiler-style front ends, geometry, and display performance.</span><span class="lang-zh">属性框架、命令扩展、规则检查、编译器式前端、几何与显示性能。</span></p><div class="tag-row"><span>MVVM</span><span>SFINAE</span><span>AST</span><span>OpenGL</span></div><p class="case-footnote"><span class="lang-en">Details stay private; the engineering pattern is part of the resume.</span><span class="lang-zh">具体代码保持私有，工程方法会体现在简历中。</span></p></article>
+      <div class="experience-list">
+        <article class="experience-item">
+          <div class="experience-time">2023 — now</div>
+          <div class="experience-content"><h3><span class="lang-en">Industrial software company</span><span class="lang-zh">工业软件公司</span></h3><p class="role"><span class="lang-en">C++ Engineer</span><span class="lang-zh">C++ 工程师</span></p><p><span class="lang-en">Build and optimize BIM/CAD systems for data organization, business queries, scene capture, graphics export, and display performance.</span><span class="lang-zh">负责 BIM/CAD 数据组织、业务查询、场景捕获、图形导出和显示性能相关 C++ 系统开发与优化。</span></p><div class="tag-list"><span>C++</span><span>CAD / BIM</span><span><span class="lang-en">Performance</span><span class="lang-zh">性能</span></span></div></div>
+        </article>
+        <article class="experience-item">
+          <div class="experience-time">2022.07 — 08</div>
+          <div class="experience-content"><h3><span class="lang-en">Game development team</span><span class="lang-zh">游戏开发团队</span></h3><p class="role"><span class="lang-en">Game Development Intern</span><span class="lang-zh">游戏开发实习生</span></p><p><span class="lang-en">Contributed to game-development features and supporting implementation in a production team environment.</span><span class="lang-zh">参与游戏开发功能和配套实现，熟悉生产团队中的协作与交付流程。</span></p><div class="tag-list"><span><span class="lang-en">Game development</span><span class="lang-zh">游戏开发</span></span><span><span class="lang-en">Delivery</span><span class="lang-zh">交付</span></span></div></div>
+        </article>
+        <article class="experience-item">
+          <div class="experience-time">2021</div>
+          <div class="experience-content"><h3><span class="lang-en">Consumer electronics company</span><span class="lang-zh">消费电子公司</span></h3><p class="role"><span class="lang-en">Algorithm Intern</span><span class="lang-zh">算法实习生</span></p><p><span class="lang-en">Built data, training, and evaluation workflows for gesture and face computer vision; worked on tracking, quantization-oriented optimization, and model-driven animation prototypes.</span><span class="lang-zh">参与手势与人脸计算机视觉模型的数据、训练与评测流程，以及跟踪、面向量化的优化和模型驱动动画原型。</span></p><div class="tag-list"><span><span class="lang-en">Computer vision</span><span class="lang-zh">计算机视觉</span></span><span>PyTorch</span><span><span class="lang-en">Tracking</span><span class="lang-zh">跟踪</span></span></div></div>
+        </article>
+        <article class="experience-item">
+          <div class="experience-time">2020.04 — 06</div>
+          <div class="experience-content"><h3><span class="lang-en">Software company</span><span class="lang-zh">软件公司</span></h3><p class="role"><span class="lang-en">Software Engineer Intern</span><span class="lang-zh">软件工程师实习生</span></p><p><span class="lang-en">Developed Python/Qt tools for a game-engine workflow and prototyped monocular 3D face reconstruction with StyleGAN-based texture transfer.</span><span class="lang-zh">使用 Python/Qt 开发游戏引擎工作流工具，参与单目 3D 人脸重建和基于 StyleGAN 的纹理风格迁移原型。</span></p><div class="tag-list"><span>Python / Qt</span><span>3D vision</span><span>StyleGAN</span></div></div>
+        </article>
       </div>
     </section>
 
-    <section class="closing-section shell"><div class="closing-card"><div><p class="section-label"><span class="lang-en">Public work</span><span class="lang-zh">公开入口</span></p><h2><span class="lang-en">Open the work.<br /><em>Follow the trail.</em></span><span class="lang-zh">打开作品，<br /><em>沿着证据继续。</em></span></h2></div><div class="closing-copy"><p><span class="lang-en">Source, research, and real product surfaces are collected here. Private employer and location details stay off this page.</span><span class="lang-zh">代码、研究和真实产品入口集中在这里；公司与地区信息不出现在公开页面。</span></p><div class="closing-links"><a class="button button-primary" href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="text-action" href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer"><span class="lang-en">ResearchGate profile</span><span class="lang-zh">ResearchGate 主页</span><span aria-hidden="true">↗</span></a></div></div></div></section>
+    <section class="resume-section projects-section shell" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading projects-heading">
+        <div>
+          <p class="section-label"><span class="lang-en">04 / Selected projects</span><span class="lang-zh">04 / 精选项目</span></p>
+          <h2 id="projects-title"><span class="lang-en">Evidence you can open</span><span class="lang-zh">可以打开、运行和核验的证据</span></h2>
+        </div>
+        <p class="section-note"><span class="lang-en">Live products, public source, course surfaces, and anonymized engineering work.</span><span class="lang-zh">在线产品、公开源码、课程页面和脱敏工程案例。</span></p>
+      </div>
+      <div class="project-filters" role="group" aria-label="Project filters">
+        <button type="button" class="filter-button is-active" data-filter="all"><span class="lang-en">All work</span><span class="lang-zh">全部</span></button>
+        <button type="button" class="filter-button" data-filter="agent"><span class="lang-en">Agent & product</span><span class="lang-zh">Agent 与产品</span></button>
+        <button type="button" class="filter-button" data-filter="systems"><span class="lang-en">C++ & systems</span><span class="lang-zh">C++ 与系统</span></button>
+        <button type="button" class="filter-button" data-filter="course"><span class="lang-en">Courses & evidence</span><span class="lang-zh">课程与实证</span></button>
+      </div>
+      <div class="project-grid" id="project-grid">
+        <article class="project-card project-card-featured" data-category="agent">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Live product · Agent</span><span class="lang-zh">在线产品 · Agent</span></span><span class="project-number">P01</span></div>
+          <div class="project-card-body">
+            <div class="project-copy"><h3>ViewAtom</h3><p class="project-lead"><span class="lang-en">A research-oriented Agent product across Web, iOS, and a production backend.</span><span class="lang-zh">覆盖 Web、iOS 与后端的一体化研究型 Agent 产品。</span></p><p><span class="lang-en">The public product turns live topics and market signals into structured, inspectable outputs. Its system work includes shared request/event contracts, streaming updates, persistent runs, tool-oriented execution, evidence-linked results, and failure-aware delivery.</span><span class="lang-zh">在线产品将实时热点和市场信号整理为结构化、可检查的输出。系统工作覆盖共享请求/事件协议、流式更新、持久化运行记录、面向工具的任务执行、证据关联结果和故障感知交付。</span></p><div class="tag-list"><span>Web</span><span>iOS</span><span>FastAPI</span><span><span class="lang-en">Agent runtime</span><span class="lang-zh">Agent 运行时</span></span><span><span class="lang-en">Financial data</span><span class="lang-zh">金融数据</span></span></div><div class="project-actions"><a class="button button-primary" href="https://viewatom.com" target="_blank" rel="noreferrer"><span class="lang-en">Open live product</span><span class="lang-zh">打开在线产品</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://viewatom.com/hot-topics" target="_blank" rel="noreferrer"><span class="lang-en">View Agent surface</span><span class="lang-zh">查看 Agent 页面</span><span aria-hidden="true">↗</span></a></div></div>
+            <div class="project-gallery project-gallery-viewatom"><a href="https://viewatom.com/hot-topics" target="_blank" rel="noreferrer"><img src="assets/viewatom-hot-topics.png" alt="ViewAtom hot topics Agent surface" data-alt-en="ViewAtom hot topics Agent surface" data-alt-zh="ViewAtom 热点追踪 Agent 页面" loading="lazy" /></a><a href="https://viewatom.com/ai-chain-decision-map" target="_blank" rel="noreferrer"><img src="assets/viewatom-decision-map.png" alt="ViewAtom industry chain decision map" data-alt-en="ViewAtom industry chain decision map" data-alt-zh="ViewAtom 产业链决策图" loading="lazy" /></a></div>
+          </div>
+          <details class="evidence-details"><summary><span class="lang-en">What is visible here?</span><span class="lang-zh">这里展示什么？</span></summary><p><span class="lang-en">The screenshots show the live product surface. The private Web/iOS/backend source is intentionally not linked from this public page.</span><span class="lang-zh">截图展示在线产品界面。Web/iOS/后端私有源码不会从此公开页面链接。</span></p></details>
+        </article>
+
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Public source · C++</span><span class="lang-zh">公开源码 · C++</span></span><span class="project-number">P02</span></div>
+          <figure class="project-media"><img src="assets/memory-pool-report.png" alt="C++ Memory Pool Benchmark generated report" data-alt-en="C++ Memory Pool Benchmark generated report" data-alt-zh="C++ Memory Pool Benchmark 生成的报告" loading="lazy" /><figcaption><span class="lang-en">A generated benchmark report, not a decorative mockup.</span><span class="lang-zh">由 benchmark 生成的报告，不是装饰性示意图。</span></figcaption></figure>
+          <div class="project-card-body"><h3>C++ Memory Pool Benchmark</h3><p><span class="lang-en">A clean-room systems demo for allocator ownership, contention, cross-thread release, reclamation, and large-run reuse.</span><span class="lang-zh">围绕分配器所有权、竞争、跨线程释放、回收和大对象复用的 Clean-room 系统工程 Demo。</span></p><div class="tag-list"><span>C++17</span><span>Atomics</span><span>Multithreading</span><span>CMake</span><span>CTest</span></div><div class="project-actions"><a class="button button-secondary" href="https://github.com/TardisBooo/cpp-memory-pool-benchmark" target="_blank" rel="noreferrer"><span class="lang-en">Read source</span><span class="lang-zh">查看源码</span><span aria-hidden="true">↗</span></a></div></div>
+          <details class="evidence-details"><summary><span class="lang-en">Implementation trail</span><span class="lang-zh">实现线索</span></summary><p><span class="lang-en">Layered thread-local cache → size classes → segments → pages → blocks, tagged atomic free lists, explicit ownership states, deterministic workloads, and Windows/Ubuntu CI.</span><span class="lang-zh">分层 thread-local cache → size classes → segments → pages → blocks，带标签的原子空闲链表、显式所有权状态、确定性工作负载和 Windows/Ubuntu CI。</span></p></details>
+        </article>
+
+        <article class="project-card" data-category="course">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Course homepage · inference</span><span class="lang-zh">课程首页 · 推理服务</span></span><span class="project-number">P03</span></div>
+          <figure class="project-media"><img src="assets/ml-serving-course-home.png" alt="ML Serving Contract Lab course homepage" data-alt-en="ML Serving Contract Lab course homepage" data-alt-zh="ML Serving Contract Lab 课程首页" loading="lazy" /><figcaption><span class="lang-en">The course homepage and its contract-first learning path.</span><span class="lang-zh">课程首页与以契约为先的学习路径。</span></figcaption></figure>
+          <div class="project-card-body"><h3>ML Serving Contract Lab</h3><p><span class="lang-en">A hands-on course that makes inference APIs, streaming behavior, limits, and observability testable before a real model arrives.</span><span class="lang-zh">围绕推理 API、流式行为、限流和可观测性设计的实践课程，在接入真实模型前先把契约变得可测试。</span></p><div class="tag-list"><span>FastAPI</span><span>Streaming</span><span>Contract tests</span><span>Observability</span></div><div class="project-actions"><a class="button button-secondary" href="https://github.com/TardisBooo/ml-serving-contract-lab" target="_blank" rel="noreferrer"><span class="lang-en">Open course repo</span><span class="lang-zh">打开课程仓库</span><span aria-hidden="true">↗</span></a></div></div>
+        </article>
+
+        <article class="project-card" data-category="course">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Local evidence · Agent course</span><span class="lang-zh">本地实证 · Agent 课程</span></span><span class="project-number">P04</span></div>
+          <figure class="project-media"><img src="assets/agenttect-course-home.png" alt="AgentTect Academy course home" data-alt-en="AgentTect Academy course home" data-alt-zh="AgentTect Academy 课程首页" loading="lazy" /><figcaption><span class="lang-en">Captured from the locally deployed AgentTect course platform.</span><span class="lang-zh">来自本地部署 AgentTect 课程平台的截图。</span></figcaption></figure>
+          <div class="project-card-body"><h3>AgentTect Academy</h3><p><span class="lang-en">A structured Agent systems course covering runtime, memory, research, code environments, multi-agent collaboration, safety, scaling, and evaluation.</span><span class="lang-zh">系统化 Agent 课程，覆盖运行时、记忆、研究、代码环境、多 Agent 协作、安全、扩展和评测。</span></p><div class="tag-list"><span>13 lessons</span><span>Agent systems</span><span>Evaluation</span><span><span class="lang-en">Local deployment</span><span class="lang-zh">本地部署</span></span></div><div class="project-actions"><a class="text-link" href="assets/agenttect-serving-course.png" target="_blank" rel="noreferrer"><span class="lang-en">View serving lesson</span><span class="lang-zh">查看 Serving 课程</span><span aria-hidden="true">↗</span></a><a class="text-link" href="assets/agenttect-lab.png" target="_blank" rel="noreferrer"><span class="lang-en">View lab evidence</span><span class="lang-zh">查看实验室实证</span><span aria-hidden="true">↗</span></a></div></div>
+          <details class="evidence-details"><summary><span class="lang-en">Publicity boundary</span><span class="lang-zh">公开边界</span></summary><p><span class="lang-en">This card presents screenshots only; the course repository and local deployment details are not exposed as public source links.</span><span class="lang-zh">此卡片只展示截图；课程仓库和本地部署细节不作为公开源码链接。</span></p></details>
+        </article>
+
+        <article class="project-card" data-category="agent">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Public source · agent tooling</span><span class="lang-zh">公开源码 · Agent 工具</span></span><span class="project-number">P05</span></div>
+          <figure class="project-media"><img src="assets/skillanything-demo.gif" alt="SkillAnything evidence-linked skill workbench demo" data-alt-en="SkillAnything evidence-linked skill workbench demo" data-alt-zh="SkillAnything 证据关联 Skill 工作台演示" loading="lazy" /><figcaption><span class="lang-en">From source material to reusable agent skills.</span><span class="lang-zh">从素材到可复用 Agent Skill。</span></figcaption></figure>
+          <div class="project-card-body"><h3>SkillAnything</h3><p><span class="lang-en">A local-first workbench for turning source material into reusable, evidence-linked agent skills.</span><span class="lang-zh">一个 local-first 工作台，将素材整理为可复用、带证据关联的 Agent Skill。</span></p><div class="tag-list"><span>Python</span><span>Evidence</span><span>Local-first</span><span>Agent skills</span></div><div class="project-actions"><a class="button button-secondary" href="https://tardisbooo.github.io/SkillAnything/" target="_blank" rel="noreferrer"><span class="lang-en">Open demo</span><span class="lang-zh">打开 Demo</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/SkillAnything" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Anonymized case · CAD</span><span class="lang-zh">脱敏案例 · CAD</span></span><span class="project-number">P06</span></div>
+          <div class="case-study">
+            <div class="case-metric"><strong>800 ms</strong><span>→</span><strong>50 ms</strong><small><span class="lang-en">verified multi-selection refresh</span><span class="lang-zh">已核验多选属性刷新</span></small></div>
+            <div class="case-metric"><strong>2 days</strong><span>→</span><strong>2 hours</strong><small><span class="lang-en">feature onboarding</span><span class="lang-zh">新功能接入周期</span></small></div>
+          </div>
+          <div class="project-card-body"><h3><span class="lang-en">CAD frameworks and DSLs</span><span class="lang-zh">CAD 框架与 DSL</span></h3><p><span class="lang-en">An anonymized engineering case covering MVVM, Visitor, generic Property<T>, SFINAE, double dispatch, strategy-based extension, compiler-style DSL front ends, geometry, and display performance.</span><span class="lang-zh">脱敏工程案例，覆盖 MVVM、Visitor、泛型 Property<T>、SFINAE、双重分派、策略化扩展、编译器式 DSL 前端、几何和显示性能。</span></p><div class="tag-list"><span>MVVM</span><span>SFINAE</span><span>AST</span><span>OpenGL</span></div><p class="privacy-note"><span class="lang-en">Private implementation; public engineering pattern.</span><span class="lang-zh">实现细节保密，公开工程方法。</span></p></div>
+        </article>
+      </div>
+      <p class="filter-empty" id="filter-empty" hidden><span class="lang-en">No projects match this filter.</span><span class="lang-zh">没有符合此筛选条件的项目。</span></p>
+    </section>
   </main>
 
-  <footer class="site-footer shell"><span>Tardis · <span class="lang-en">AI systems, research, and products</span><span class="lang-zh">AI 系统、研究与产品</span></span><span><a href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub</a><i>·</i><a href="https://viewatom.com" target="_blank" rel="noreferrer">ViewAtom</a><i>·</i><a href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer">ResearchGate</a></span></footer>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p><span class="brand-name">Tardis</span> · <span class="lang-en">AI systems, research, and products</span><span class="lang-zh">AI 系统、研究与产品</span></p>
+      <div class="footer-links"><a href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://viewatom.com" target="_blank" rel="noreferrer">ViewAtom ↗</a><a href="https://www.researchgate.net/profile/Shaobo_Chen6" target="_blank" rel="noreferrer">ResearchGate ↗</a></div>
+    </div>
+  </footer>
 
-  <script>
-    (() => {
-      const buttons = [...document.querySelectorAll('[data-language]')];
-      const images = [...document.querySelectorAll('[data-alt-en]')];
-      const setLanguage = (language) => {
-        const next = language === 'zh' ? 'zh' : 'en';
-        document.body.dataset.lang = next;
-        document.documentElement.lang = next === 'zh' ? 'zh-CN' : 'en';
-        buttons.forEach((button) => {
-          const active = button.dataset.language === next;
-          button.classList.toggle('is-active', active);
-          button.setAttribute('aria-pressed', String(active));
-        });
-        images.forEach((image) => {
-          image.alt = image.dataset[`alt${next === 'zh' ? 'Zh' : 'En'}`];
-        });
-        try { window.localStorage.setItem('tardis-portfolio-language', next); } catch (_) {}
-      };
-      buttons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
-      const queryLanguage = new URLSearchParams(window.location.search).get('lang');
-      let initial = queryLanguage === 'zh' || queryLanguage === 'en' ? queryLanguage : 'en';
-      try { if (!queryLanguage) initial = window.localStorage.getItem('tardis-portfolio-language') || 'en'; } catch (_) {}
-      setLanguage(initial);
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
