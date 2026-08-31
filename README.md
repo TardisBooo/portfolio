@@ -10,7 +10,8 @@ source is intentionally private.
 
 Public constraints:
 
-- Use `Tardis` only; do not expose employer names, location, phone, or email.
+- Use `Tardis` for the personal identity; employer names are shown in the
+  Experience section, while location, phone, and email remain private.
 - ViewAtom is presented as one Web/iOS/backend Agent product surface.
 - AgentTect is represented by screenshots only.
 - Only owned projects and clearly labelled anonymized work are included.
