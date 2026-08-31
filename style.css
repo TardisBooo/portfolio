@@ -137,9 +137,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .filter-button:hover { border-color: #98b9a7; color: var(--ink); }
 .filter-button.is-active { border-color: var(--accent); background: var(--accent); color: #fff; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.project-grid[data-filter]:not([data-filter="all"]) .project-card { grid-column: 1 / -1; }
 .project-card { min-width: 0; overflow: hidden; border: 1px solid var(--rule); border-radius: var(--radius-md); background: var(--paper-strong); box-shadow: 0 8px 28px rgba(20, 32, 29, 0.04); }
 .project-card.is-hidden { display: none; }
 .project-card-featured { grid-column: 1 / -1; }
+.project-card-horizontal { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); align-items: start; }
+.project-card-horizontal > .project-card-top { grid-column: 1 / -1; }
+.project-card-horizontal > .project-media { grid-column: 1; grid-row: 2; margin: 18px 0 20px 20px; }
+.project-card-horizontal > .project-card-body { grid-column: 2; grid-row: 2; align-self: center; padding: 18px 20px 20px; }
+.project-card-horizontal > .evidence-details { grid-column: 1 / -1; grid-row: 3; }
 .project-card-top { display: flex; justify-content: space-between; gap: 16px; padding: 18px 20px 0; }
 .project-type { color: var(--accent-strong); font-size: 10px; letter-spacing: 0.08em; }
 .project-number { color: var(--muted); font: 700 11px/1 Consolas, monospace; }
@@ -217,6 +223,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .project-card-featured { grid-column: auto; }
   .project-gallery-viewatom { grid-template-columns: 1fr; }
   .course-gallery { grid-template-columns: 1fr; }
+  .project-card-horizontal { display: block; }
+  .project-card-horizontal > .project-media { margin: 18px 20px 0; }
+  .project-card-horizontal > .project-card-body { padding: 18px 20px 21px; }
   .project-card h3 { font-size: 29px; }
   .project-actions .button { max-width: 100%; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 22px; }

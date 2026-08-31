@@ -5,6 +5,7 @@
   const images = [...document.querySelectorAll('[data-alt-en]')];
   const filterButtons = [...document.querySelectorAll('[data-filter]')];
   const projectCards = [...document.querySelectorAll('.project-card[data-category]')];
+  const projectGrid = document.querySelector('#project-grid');
   const emptyState = document.querySelector('#filter-empty');
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
@@ -33,6 +34,7 @@
 
   const setFilter = (filter) => {
     const next = filter || 'all';
+    if (projectGrid) projectGrid.dataset.filter = next;
     let visible = 0;
     filterButtons.forEach((button) => button.classList.toggle('is-active', button.dataset.filter === next));
     projectCards.forEach((card) => {
