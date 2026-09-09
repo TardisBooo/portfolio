@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tardis · Agent systems and systems engineering." />
+  <meta name="theme-color" content="#f7faf7" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Tardis · Agent &amp; systems engineering</title>
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content"><span class="lang-en">Skip to content</span><span class="lang-zh">跳到主要内容</span></a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#profile" aria-label="Tardis home"><span class="brand-mark" aria-hidden="true">T</span><span class="brand-name">Tardis</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link is-current" href="#profile"><span class="lang-en">Profile</span><span class="lang-zh">简介</span></a>
+        <a class="nav-link" href="#projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language switcher">
+          <button type="button" class="language-button is-active" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" class="language-button" data-language="zh" aria-pressed="false">中文</button>
+        </div>
+        <a class="header-link" href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="profile-hero shell" id="profile" aria-labelledby="profile-title">
+      <div class="profile-hero-main">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span class="lang-en">PUBLIC PROJECTS · 2026</span><span class="lang-zh">公开项目 · 2026</span></p>
+        <h1 id="profile-title">Tardis</h1>
+        <p class="profile-headline"><span class="lang-en">I build Agent systems and the infrastructure around them.</span><span class="lang-zh">做 Agent，也做支撑它们运行的系统。</span></p>
+        <p class="profile-summary"><span class="lang-en">A public index of Agent products, systems experiments and tools built to make complex work easier to inspect, resume and improve.</span><span class="lang-zh">这里记录 Agent 产品、系统工程和工具：让复杂工作更容易检查、恢复，也更容易持续改进。</span></p>
+        <div class="profile-actions"><a class="button button-primary" href="#projects"><span class="lang-en">View the projects</span><span class="lang-zh">查看项目</span><span aria-hidden="true">↘</span></a></div>
+      </div>
+    </section>
+
+    <section class="resume-section projects-section shell" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading projects-heading">
+        <div><h2 id="projects-title"><span class="lang-en">Open source projects</span><span class="lang-zh">开源项目</span></h2></div>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card project-card-featured" data-category="agent" id="mobius">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · Rust · Agent</span><span class="lang-zh">开源 · Rust · Agent</span></span><span class="project-number">P01</span></div>
+          <div class="project-card-body">
+            <h3>Möbius</h3>
+            <p class="project-lead"><span class="lang-en">Switch agents. Keep the trajectory.</span><span class="lang-zh">切换 Agent，保留完整轨迹。</span></p>
+            <p><span class="lang-en">A Rust/Tauri workspace for Codex, Claude Code, Pi and Grok. It finds sessions in their original directories, keeps transcripts read-only, and makes exact references and local full-text search explicit.</span><span class="lang-zh">面向 Codex、Claude Code、Pi 和 Grok 的 Rust/Tauri 工作台。它识别原始目录中的会话，让原始记录保持只读，并提供精准引用与本地全文搜索。</span></p>
+            <p><span class="lang-en">Bring a reviewable trajectory—not a vague summary—into another agent. Follow the project handoff graph, write Markdown notes, collect URLs/images/text on a multimedia canvas, and use native PowerShell tabs without leaving the workspace.</span><span class="lang-zh">把可复核的完整轨迹，而不是模糊摘要，交给另一个 Agent。查看项目交接图，编辑 Markdown 笔记，把网址、图片和文本收进多媒体画布，并在工作区内使用原生 PowerShell 标签页。</span></p>
+            <div class="tag-list"><span>Rust</span><span>Tauri</span><span>SQLite / FTS</span><span>Handoffs</span><span>MIT</span></div>
+            <div class="project-actions"><a class="button button-primary" href="http://8.137.87.76/mobius/" target="_blank" rel="noreferrer"><span class="lang-en">Open product page</span><span class="lang-zh">打开产品页</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/Mobius" target="_blank" rel="noreferrer"><span class="lang-en">Source & downloads</span><span class="lang-zh">源码与下载</span><span aria-hidden="true">↗</span></a></div>
+          </div>
+          <figure class="project-media project-film"><video class="project-video" controls playsinline preload="metadata" poster="资源/mobius-poster.png" aria-label="Möbius product tour, English"><source src="资源/mobius-product-film.mp4" type="video/mp4" /><a href="资源/mobius-product-film.mp4">Watch the Möbius product tour</a></video><figcaption><span class="lang-en">English product tour · fictional demo data in the actual light-mode UI. Use fullscreen for a closer look.</span><span class="lang-zh">英文产品演示 · 使用真实浅色界面与虚构演示数据。可全屏查看细节。</span></figcaption></figure>
+          <details class="evidence-details"><summary><span class="lang-en">Implementation boundaries</span><span class="lang-zh">实现边界</span></summary><p><span class="lang-en">Search is local FTS/BM25; history is not injected by default. A handoff creates a target prompt while native resume remains with the original harness.</span><span class="lang-zh">搜索使用本地 FTS/BM25，默认不会注入其它历史。交接生成目标提示词，原生恢复仍由原 Harness 执行。</span></p></details>
+        </article>
+
+        <article class="project-card project-card-featured" data-category="agent" id="viewatom">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Public product · Agent · Web / iOS</span><span class="lang-zh">公开产品 · Agent · Web / iOS</span></span><span class="project-number">P02</span></div>
+          <div class="project-card-body"><h3>ViewAtom</h3><p class="project-lead"><span class="lang-en">Turn live signals into structured, inspectable results.</span><span class="lang-zh">把实时信号整理成结构化、可检查的结果。</span></p><p><span class="lang-en">When live topics, market movement and source links arrive as a noisy stream, it is hard to tell what changed and why it matters. ViewAtom turns that stream into persistent Agent runs, readable topic maps and evidence-linked outputs that can be revisited instead of re-asked.</span><span class="lang-zh">实时热点、市场变化和来源链接混在信息流里时，很难判断发生了什么、为什么重要。ViewAtom 把这些信息整理成可追溯的 Agent 运行记录、主题图和证据关联结果，避免每次都从头追问。</span></p><div class="tag-list"><span>Web</span><span>iOS</span><span>Agent runtime</span><span>FastAPI</span></div><div class="project-actions"><a class="button button-primary" href="https://viewatom.com" target="_blank" rel="noreferrer"><span class="lang-en">Open live product</span><span class="lang-zh">打开在线产品</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://viewatom.com/hot-topics" target="_blank" rel="noreferrer"><span class="lang-en">View Agent surface</span><span class="lang-zh">查看 Agent 页面</span><span aria-hidden="true">↗</span></a></div></div>
+          <div class="project-gallery restored-gallery-dual"><a href="资源/ViewAtom_热点主题.png" target="_blank" rel="noreferrer"><img src="资源/ViewAtom_热点主题.png" alt="ViewAtom hot topics surface" data-alt-en="ViewAtom hot topics surface" data-alt-zh="ViewAtom 热点主题页面" loading="lazy" /></a><a href="资源/ViewAtom_决策图.png" target="_blank" rel="noreferrer"><img src="资源/ViewAtom_决策图.png" alt="ViewAtom decision map" data-alt-en="ViewAtom decision map" data-alt-zh="ViewAtom 决策图" loading="lazy" /></a></div>
+        </article>
+
+        <article class="project-card project-card-featured" data-category="agent" id="agenttect">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open course · Agent learning</span><span class="lang-zh">开源课程 · Agent 学习项目</span></span><span class="project-number">P03</span></div>
+          <div class="project-gallery restored-gallery-triple"><a href="资源/智能体课程首页.png" target="_blank" rel="noreferrer"><img src="资源/智能体课程首页.png" alt="AgentTect course home" data-alt-en="AgentTect course home" data-alt-zh="AgentTect 课程首页" loading="lazy" /></a><a href="资源/智能体课程大纲.png" target="_blank" rel="noreferrer"><img src="资源/智能体课程大纲.png" alt="AgentTect course outline" data-alt-en="AgentTect course outline" data-alt-zh="AgentTect 课程大纲" loading="lazy" /></a><a href="资源/智能体推理课程.png" target="_blank" rel="noreferrer"><img src="资源/智能体推理课程.png" alt="AgentTect inference lesson" data-alt-en="AgentTect inference lesson" data-alt-zh="AgentTect 推理课程" loading="lazy" /></a></div>
+          <div class="project-card-body"><h3>AgentTect</h3><p class="project-lead"><span class="lang-en">Learn how Agent systems work by building them.</span><span class="lang-zh">边学 Agent，边把系统搭起来。</span></p><p><span class="lang-en">Many Agent courses stop at prompt demos, while the hard parts—tool calls, streaming, state, limits and failure recovery—stay implicit. AgentTect is a hands-on Agent course and learning project: lessons, runnable examples and small experiments turn each concept into something you can inspect, change and run yourself.</span><span class="lang-zh">很多 Agent 课程停留在提示词演示，工具调用、流式输出、状态管理、限流和故障恢复等难点却没有真正讲清。AgentTect 是一个动手学习 Agent 的课程项目：用课程、可运行示例和小实验，把每个概念变成可以观察、修改并亲自运行的系统。</span></p><div class="tag-list"><span>Agent course</span><span>Hands-on labs</span><span>FastAPI</span><span>Streaming</span><span>Observability</span></div><div class="project-actions"><a class="button button-secondary" href="https://github.com/TardisBooo/ml-serving-contract-lab" target="_blank" rel="noreferrer"><span class="lang-en">Open source</span><span class="lang-zh">打开源码</span><span aria-hidden="true">↗</span></a><a class="text-link" href="资源/智能体推理服务课程.png" target="_blank" rel="noreferrer"><span class="lang-en">View serving lesson</span><span class="lang-zh">查看推理课程</span><span aria-hidden="true">↗</span></a></div></div>
+        </article>
+
+        <article class="project-card" data-category="systems" id="cpp-benchmark">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · C++17 · systems</span><span class="lang-zh">开源 · C++17 · 系统工程</span></span><span class="project-number">P04</span></div>
+          <figure class="project-media"><img src="资源/内存池基准报告.png" alt="C++ memory pool benchmark report" data-alt-en="C++ memory pool benchmark report" data-alt-zh="C++ 内存池基准报告" loading="lazy" /><figcaption><span class="lang-en">A generated benchmark report.</span><span class="lang-zh">由基准测试生成的报告。</span></figcaption></figure>
+          <div class="project-card-body"><h3>C++ Memory Pool Benchmark</h3><p class="project-lead"><span class="lang-en">Measure allocation behavior under repeatable workloads.</span><span class="lang-zh">在可重复工作负载下测量内存分配行为。</span></p><p><span class="lang-en">Allocator performance is easy to overstate with one happy-path number. This benchmark isolates ownership, contention, cross-thread release, reclamation and large-run reuse so systems work can be compared with the workload and trade-off visible.</span><span class="lang-zh">只给出一个顺利路径的数字，很容易夸大分配器性能。这个基准拆开所有权、竞争、跨线程释放、回收和大对象复用，让系统工程的比较有可重复负载和清晰取舍。</span></p><div class="tag-list"><span>C++17</span><span>Atomics</span><span>Multithreading</span><span>CMake</span></div><div class="project-actions"><a class="button button-secondary" href="https://github.com/TardisBooo/cpp-memory-pool-benchmark" target="_blank" rel="noreferrer"><span class="lang-en">Read source</span><span class="lang-zh">查看源码</span><span aria-hidden="true">↗</span></a></div></div>
+        </article>
+
+        <article class="project-card" data-category="agent">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · local hooks</span><span class="lang-zh">开源 · 本地 Hooks</span></span><span class="project-number">P05</span></div>
+          <figure class="project-media project-logo"><img src="资源/tigang-logo.svg" alt="tigang-reminder logo" data-alt-en="tigang-reminder logo" data-alt-zh="tigang-reminder 标志" width="240" height="240" loading="lazy" /><figcaption><span class="lang-en">The commit hook that asks for one ridiculous, useful reset.</span><span class="lang-zh">每次提交都认真提醒你：提肛。</span></figcaption></figure>
+          <div class="project-card-body"><h3>tigang-reminder</h3><p class="project-lead"><span class="lang-en">Commit. Push. 提肛.</span><span class="lang-zh">Commit、Push，然后提肛。</span></p><p><span class="lang-en">Long coding sessions make one tiny habit easy to forget. tigang-reminder turns every successful commit or push into a playful “提肛” nudge—an intentionally silly reminder to reset your posture before the next task. It runs at the hook boundary, outside Agent context, with no network request or model call.</span><span class="lang-zh">长时间写代码最容易忘记一个小习惯：提肛。tigang-reminder 在每次成功 commit 或 push 后发出一个带点玩笑的“提肛”提醒，让你在下一个任务前重置坐姿。它运行在 Hook 边界之外，不进入 Agent 上下文，不请求网络，也不调用模型。</span></p><div class="tag-list"><span>Node.js</span><span>Hooks</span><span>Deterministic</span><span>MIT</span></div><div class="project-actions"><a class="button button-secondary" href="https://github.com/TardisBooo/tigang-plugin" target="_blank" rel="noreferrer"><span class="lang-en">Open source</span><span class="lang-zh">打开源码</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/tigang-plugin/blob/main/INSTALL.md" target="_blank" rel="noreferrer"><span class="lang-en">Installation</span><span class="lang-zh">安装说明</span><span aria-hidden="true">↗</span></a></div></div>
+        </article>
+
+        <article class="project-card" data-category="agent" id="skillanything">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · Agent skills</span><span class="lang-zh">开源 · Agent Skill</span></span><span class="project-number">P06</span></div>
+          <figure class="project-media"><img src="资源/技能工具项目演示.gif" alt="SkillAnything workbench demo" data-alt-en="SkillAnything workbench demo" data-alt-zh="SkillAnything 工作台演示" loading="lazy" /><figcaption><span class="lang-en">From source material to reusable skills.</span><span class="lang-zh">从素材到可复用 Skill。</span></figcaption></figure>
+          <div class="project-card-body"><h3>SkillAnything</h3><p class="project-lead"><span class="lang-en">Distill a creator you admire into a reusable method.</span><span class="lang-zh">把喜欢的博主，蒸馏成可复用的方法论。</span></p><p><span class="lang-en">A favorite blogger's best ideas are easy to admire and hard to reproduce: the examples, choices and reasoning stay scattered across posts and videos. SkillAnything helps you collect that creator's material, extract the recurring principles and workflow, link each claim back to evidence, and package the result as a reusable Agent skill for practice and iteration.</span><span class="lang-zh">喜欢的博主讲得好，不代表我们能复现：案例、取舍和推理往往散落在文章与视频里。SkillAnything 帮你收集这位创作者的素材，提炼反复出现的原则与工作流，把每条结论连回证据，再整理成可以练习、迭代的 Agent Skill。</span></p><div class="tag-list"><span>Python</span><span>Method distillation</span><span>Agent skills</span></div><div class="project-actions"><a class="button button-secondary" href="https://tardisbooo.github.io/SkillAnything/" target="_blank" rel="noreferrer"><span class="lang-en">Open demo</span><span class="lang-zh">打开 Demo</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/SkillAnything" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><p><span class="brand-name">Tardis</span> · <span class="lang-en">Open source work in Agent systems and systems engineering.</span><span class="lang-zh">Agent 系统与系统工程的开源作品。</span></p><div class="footer-links"><a href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="http://8.137.87.76/mobius/" target="_blank" rel="noreferrer">Möbius ↗</a></div></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
