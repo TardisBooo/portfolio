@@ -1,7 +1,7 @@
 # Tardis · portfolio
 
-A bilingual portfolio for six public projects: Möbius, tigang-reminder,
-ViewAtom, AgentTect, C++ Memory Pool Benchmark and SkillAnything. The page is
+A bilingual portfolio for seven public projects: Möbius, prewalk, tigang-reminder,
+ViewAtom, AgentTect, C++ Memory Pool Framework and SkillAnything. The page is
 static and can be served by GitHub Pages or any ordinary web host.
 
 ## Included
