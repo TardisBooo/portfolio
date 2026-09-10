@@ -7,8 +7,9 @@ static and can be served by GitHub Pages or any ordinary web host.
 ## Included
 
 - the English Möbius product film, poster and product link;
-- concise, public-facing feature summaries and source links for all six projects;
-- screenshots for ViewAtom, AgentTect, the C++ benchmark and SkillAnything;
+- concise, public-facing feature summaries and source links for all seven projects;
+- screenshots for ViewAtom, AgentTect, the C++ systems project and SkillAnything;
+- a trajectory-inheritance and durable-checkpoint overview for prewalk;
 - the tigang-reminder logo and installation link;
 - an English/简体中文 switch with no third-party runtime or analytics.
 
