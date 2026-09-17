@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tardis — local-first agent tools, open-source applications, and Rust/C++ systems. Includes Möbius, a Windows workspace for Codex, Claude Code, Pi, Grok and OMP." />
+  <meta name="description" content="Tardis — local-first agent tools, open-source applications, and Rust/C++ systems. Includes Möbius, mobius-connect, harness-daily, prewalk, and more." />
   <meta name="theme-color" content="#f7faf7" />
   <link rel="canonical" href="https://tardisbooo.github.io/portfolio/" />
   <link rel="alternate" hreflang="en" href="https://tardisbooo.github.io/portfolio/?lang=en" />
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="style.css" />
   <title>Tardis · Agent systems and projects</title>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Tardis","url":"https://tardisbooo.github.io/portfolio/","sameAs":["https://github.com/TardisBooo"],"knowsAbout":["local-first agent tools","Rust","C++","Möbius","Codex","Claude Code"]}
+  {"@context":"https://schema.org","@type":"Person","name":"Tardis","url":"https://tardisbooo.github.io/portfolio/","sameAs":["https://github.com/TardisBooo"],"knowsAbout":["local-first agent tools","Rust","C++","Möbius","mobius-connect","harness-daily","Codex","Claude Code"]}
   </script>
 </head>
 <body data-lang="en">
@@ -60,16 +60,39 @@
           <div class="project-card-body">
             <h3>Möbius</h3>
             <p class="project-lead"><span class="lang-en">Switch agents. Keep the work.</span><span class="lang-zh">切换 Agent，工作不断线。</span></p>
-            <p><span class="lang-en">A local-first Windows workspace for Codex, Claude Code, Pi, Grok and OMP. Hand off confirmed Session references, follow the project graph, and find original messages with precise @session links and local FTS/BM25 search.</span><span class="lang-zh">面向 Codex、Claude Code、Pi、Grok 与 OMP 的本地 Windows 工作台。按引用交接已确认 Session，追踪项目图谱，用精确 @session 链接与本地 FTS/BM25 找到原始消息。</span></p>
+            <p><span class="lang-en">An Agent Session Hub for Claude Code, Codex, OpenCode, Pi, Grok and OMP. A Session is the asset: search, cite, resume and hand off a full trajectory. Native resume stays with the original harness. A lineage graph records the relay — references, not summaries. Local SQLite FTS/BM25.</span><span class="lang-zh">面向 Claude Code、Codex、OpenCode、Pi、Grok 与 OMP 的 Agent 会话层。Session 才是资产：搜索、引用、恢复、交接完整轨迹。原生恢复走原 Harness。交接图谱记录接力链——传引用，不传摘要。本地 SQLite FTS/BM25。</span></p>
             <p><span class="lang-en">Native PowerShell tabs, Markdown documents and a free multimedia canvas keep execution, notes and supporting material together. Built with Rust, Tauri and SQLite; source transcripts stay read-only and history is never injected by default.</span><span class="lang-zh">原生 PowerShell 标签页、Markdown 文档与多媒体自由画布，让执行、笔记和参考资料集中在工作旁边。基于 Rust、Tauri 与 SQLite，原始会话保持只读，默认不注入其他历史。</span></p>
-            <div class="tag-list"><span>Rust</span><span>Tauri</span><span>SQLite / BM25</span><span>Local-first</span><span>MIT</span></div>
+            <div class="tag-list"><span>Rust</span><span>Tauri</span><span>SQLite / BM25</span><span>OpenCode</span><span>Local-first</span><span>MIT</span></div>
             <div class="project-actions"><a class="button button-primary" href="http://8.137.87.76/mobius/" target="_blank" rel="noreferrer"><span class="lang-en">Open product page</span><span class="lang-zh">打开产品主页</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/Mobius" target="_blank" rel="noreferrer"><span class="lang-en">Source & downloads</span><span class="lang-zh">源码与下载</span><span aria-hidden="true">↗</span></a></div>
           </div>
           <figure class="project-media project-film">
             <video class="project-video" controls playsinline preload="metadata" poster="资源/mobius-poster.png" aria-label="Möbius product tour, English"><source src="资源/mobius-product-film.mp4" type="video/mp4" /><a href="资源/mobius-product-film.mp4">Watch the Möbius product tour</a></video>
             <figcaption><span class="lang-en">English product tour · actual UI · fictional demo projects and scripted agent output. Current preview: v0.3.19.</span><span class="lang-zh">英文产品演示 · 真实界面 · 虚构项目与脚本化 Agent 输出。当前预览版：v0.3.19。</span></figcaption>
           </figure>
-          <details class="evidence-details"><summary><span class="lang-en">Preview boundaries & media credits</span><span class="lang-zh">预览版边界与素材署名</span></summary><p><span class="lang-en">Cross-agent handoff creates a new target session; native resume stays with the original harness. Search uses FTS/BM25, not a semantic/vector backend. The film demonstrates the product, not native-agent acceptance. Distinct from Microsoft Mobius and ControlTheory Möbius.</span><span class="lang-zh">跨 Agent 交接会创建目标新会话，原生恢复保留原 Harness。当前搜索采用 FTS/BM25，尚未接入语义／向量后端。视频用于产品演示，不作为原生 Agent 验收证据。与 Microsoft Mobius、ControlTheory Möbius 不是同一产品。</span> <a href="https://github.com/TardisBooo/Mobius/blob/main/licenses/MEDIA-CREDITS.md" target="_blank" rel="noreferrer"><span class="lang-en">Media credits</span><span class="lang-zh">素材署名</span></a></p></details>
+          <details class="evidence-details"><summary><span class="lang-en">Preview boundaries & media credits</span><span class="lang-zh">预览版边界与素材署名</span></summary><p><span class="lang-en">Cross-agent handoff creates a new target session; native resume stays with the original harness. Search is local FTS/BM25; optional hybrid ranking uses localhost Ollama and fails open to lexical. The film demonstrates the product, not native-agent acceptance. Distinct from Microsoft Mobius and ControlTheory Möbius.</span><span class="lang-zh">跨 Agent 交接会创建目标新会话，原生恢复保留原 Harness。搜索默认是本地 FTS/BM25；混合排序需显式开启本机 Ollama，缺失时回退词法。视频用于产品演示，不作为原生 Agent 验收证据。与 Microsoft Mobius、ControlTheory Möbius 不是同一产品。</span> <a href="https://github.com/TardisBooo/Mobius/blob/feat/session-lineage-references/licenses/MEDIA-CREDITS.md" target="_blank" rel="noreferrer"><span class="lang-en">Media credits</span><span class="lang-zh">素材署名</span></a></p></details>
+        </article>
+
+        <article class="project-card project-card-featured" data-category="agent" id="mobius-connect">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · Rust · CLI / MCP</span><span class="lang-zh">开源 · Rust · CLI / MCP</span></span><span class="project-number">P08</span></div>
+          <div class="project-card-body">
+            <h3>mobius-connect</h3>
+            <p class="project-lead"><span class="lang-en">The same session hub, in a terminal.</span><span class="lang-zh">同一套会话层，在终端里。</span></p>
+            <p><span class="lang-en">CLI and stdio MCP for Möbius. Search, cite, graph and hand off local coding-agent sessions without the desktop UI. Harness files stay read-only. A handoff carries ancestry references, not a generated summary. MCP cannot mint approval tokens, add sources, or attach a PTY.</span><span class="lang-zh">Möbius 的 CLI 与 stdio MCP。无需桌面即可搜索、引用、画出并交接本地编程 Agent 会话。Harness 文件保持只读。交接携带祖先引用，不生成摘要。MCP 不能签发审批令牌、不能添加来源、不能接管 PTY。</span></p>
+            <p><span class="lang-en">Shares the desktop core. Commands cover init, approved sources, BM25 search, bounded transcript reads, lineage export, Mome recall, opt-in localhost embeddings, and a three-step human APPROVE handoff.</span><span class="lang-zh">与桌面共用核心。命令覆盖初始化、批准来源、BM25 搜索、有界正文读取、谱系导出、Mome 召回、可选本机 embedding，以及真人输入 APPROVE 的三步交接。</span></p>
+            <div class="tag-list"><span>Rust</span><span>CLI</span><span>stdio MCP</span><span>FTS / BM25</span><span>MIT</span></div>
+            <div class="project-actions"><a class="button button-primary" href="https://github.com/TardisBooo/mobius-connect" target="_blank" rel="noreferrer"><span class="lang-en">Open source</span><span class="lang-zh">打开源码</span><span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/TardisBooo/mobius-connect/blob/main/docs/MCP.md" target="_blank" rel="noreferrer"><span class="lang-en">MCP contract</span><span class="lang-zh">MCP 契约</span><span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="project-card project-card-featured" data-category="agent" id="harness-daily">
+          <div class="project-card-top"><span class="project-type"><span class="lang-en">Open source · Rust · daily report</span><span class="lang-zh">开源 · Rust · 日报</span></span><span class="project-number">P09</span></div>
+          <div class="project-card-body">
+            <h3>harness-daily</h3>
+            <p class="project-lead"><span class="lang-en">One command turns yesterday’s agent sessions into a standup report.</span><span class="lang-zh">一条命令，把昨天的 Agent 会话写成日报。</span></p>
+            <p><span class="lang-en">Scans local Codex, Claude Code, Grok Build, Pi and OMP histories on disk, then asks the agent CLI you already use to write an enterprise-style daily report. Nothing leaves the machine except the distilled prompts you choose to send. No extra API keys.</span><span class="lang-zh">在本地扫描 Codex、Claude Code、Grok Build、Pi 与 OMP 的会话历史，再用你已经安装的 Agent CLI 写成企业风格日报。除了你选择送出的蒸馏提示，数据不出本机。不需要额外 API 密钥。</span></p>
+            <div class="tag-list"><span>Rust</span><span>Local scan</span><span>Codex / Claude / Grok / Pi / OMP</span><span>MIT</span></div>
+            <div class="project-actions"><a class="button button-primary" href="https://github.com/TardisBooo/harness-daily" target="_blank" rel="noreferrer"><span class="lang-en">Open source</span><span class="lang-zh">打开源码</span><span aria-hidden="true">↗</span></a></div>
+          </div>
         </article>
 
         <article class="project-card project-card-featured" data-category="agent" id="prewalk">
@@ -110,7 +133,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-inner"><p><span class="brand-name">Tardis</span> · <span class="lang-en">Open source work in Agent systems and systems engineering.</span><span class="lang-zh">Agent 系统与系统工程的开源作品。</span></p><div class="footer-links"><a href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="http://8.137.87.76/mobius/" target="_blank" rel="noreferrer">Möbius ↗</a></div></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><p><span class="brand-name">Tardis</span> · <span class="lang-en">Open source work in Agent systems and systems engineering.</span><span class="lang-zh">Agent 系统与系统工程的开源作品。</span></p><div class="footer-links"><a href="https://github.com/TardisBooo" target="_blank" rel="noreferrer">GitHub ↗</a><a href="http://8.137.87.76/mobius/" target="_blank" rel="noreferrer">Möbius ↗</a><a href="https://github.com/TardisBooo/mobius-connect" target="_blank" rel="noreferrer">mobius-connect ↗</a></div></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
