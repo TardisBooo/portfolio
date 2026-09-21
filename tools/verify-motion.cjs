@@ -19,8 +19,8 @@ const fs = require("node:fs");
   await page.screenshot({ path: `${out}/final-hero.png` });
   await page.locator(".tardis-stage").scrollIntoViewIfNeeded();
   await page.waitForTimeout(1200);
-  const box = page.locator(".tardis-box");
-  const transform = () => box.evaluate((e) => getComputedStyle(e).transform);
+  const box = page.locator(".tardis-scene");
+  const transform = async () => (await box.screenshot()).toString("base64");
   const a = await transform();
   await page.waitForTimeout(700);
   assert.notEqual(await transform(), a, "Tardis must rotate");
@@ -38,7 +38,38 @@ const fs = require("node:fs");
     await page.waitForTimeout(1300);
     await page.screenshot({ path: `${out}/final-${id}.png` });
   }
-  assert.equal(await page.locator(".benchmark-panel tbody tr").count(), 5);
+  assert.equal(await page.locator(".benchmark-panel").count(), 0);
+  const carousel = page.locator(".prewalk-carousel");
+  for (const width of [1440, 390, 320]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const lang of ["en", "zh"]) {
+      await page.locator(`[data-language=${lang}]`).click();
+      await carousel.scrollIntoViewIfNeeded();
+      for (let i = 0; i < 4; i++) {
+        assert.equal(
+          await carousel.locator(".prewalk-slide:visible").count(),
+          1,
+        );
+        assert(
+          await page.evaluate(
+            () => document.documentElement.scrollWidth <= innerWidth + 1,
+          ),
+        );
+        await carousel.locator(".carousel-next").click();
+      }
+      await carousel.focus();
+      await page.keyboard.press("ArrowLeft");
+      assert.equal(
+        await carousel.locator(".carousel-status").textContent(),
+        "4 / 4",
+      );
+      await page.keyboard.press("ArrowRight");
+      assert.equal(
+        await carousel.locator(".carousel-status").textContent(),
+        "1 / 4",
+      );
+    }
+  }
   await page.locator("#mobius video").evaluate((v) => v.load());
   await page.waitForFunction(
     () => document.querySelector("video").duration > 100,
@@ -50,10 +81,7 @@ const fs = require("node:fs");
   );
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.locator(".tardis-stage").scrollIntoViewIfNeeded();
-  assert.equal(
-    await box.evaluate((e) => getComputedStyle(e).animationName),
-    "none",
-  );
+  assert(await page.locator(".tardis-still").isVisible());
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("http://127.0.0.1:4173/?lang=zh");
@@ -65,7 +93,9 @@ const fs = require("node:fs");
     ),
   );
   await page.screenshot({ path: `${out}/final-tardis-mobile.png` });
-  await page.locator(".benchmark-panel").scrollIntoViewIfNeeded();
+  await page.locator(".prewalk-carousel").scrollIntoViewIfNeeded();
+  await page.locator(".carousel-next").click();
+  await page.locator(".carousel-next").click();
   await page.screenshot({ path: `${out}/final-benchmark-mobile.png` });
   assert(
     await page.evaluate(
@@ -79,11 +109,11 @@ const fs = require("node:fs");
       {
         passed: [
           "Requested hero/subtitle changes",
-          "3D rotation progresses",
+          "User-provided GIF animates",
           "Pause and keyboard resume",
           "Reduced-motion static rendering",
           "Latest video duration 109.312s",
-          "Five benchmark arms",
+          "Four compact carousel cards, bilingual, keyboard and arrow navigation",
           "Mobile Tardis and benchmark without page overflow",
         ],
         errors,

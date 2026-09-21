@@ -45,3 +45,12 @@ motion, current 109-second Möbius launch film, harness-daily mark and sourced p
 benchmark comparisons. [Sources and acceptance](docs/motion-media-update.md).
 Durable media: `D:\DataVault\portfolio\media\20260921`.
 Motion review evidence: `E:\Workspaces\_audits\portfolio-motion-20260921`.
+
+The Tardis now uses the owner's supplied `x6IRTA.gif` directly as
+`资源/tardis-rotation.gif`, retaining its original green background and watermark.
+Pause and reduced motion show a static canvas frame. Original file preserved at
+`D:\DataVault\portfolio\media\20260921\tardis-rotation-user.gif` (601,353 bytes).
+
+Prewalk's workflow, adaptations, core benchmark metrics and cost/time trade-off now
+share one four-card carousel. Use its arrows, keyboard left/right, or touch swipes.
+The full historical table and test conditions remain linked from the card.

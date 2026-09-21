@@ -1,5 +1,23 @@
 # Owner-directed media, identity and motion update
 
+## Follow-up: supplied GIF and compact benchmark cards
+
+The owner subsequently supplied `C:\Users\MSI-NB\Downloads\x6IRTA.gif` and asked
+for direct replacement. The site now serves the unmodified GIF (601,353 bytes),
+including its green background and watermark. A static canvas frame replaces its
+visible animation when paused, offscreen, in a hidden tab or under reduced motion.
+The original is preserved as `tardis-rotation-user.gif` in the media vault below.
+
+The owner also requested the prewalk section match the other projects' footprint.
+The large full-width benchmark panel was removed in favor of a four-card carousel
+inside the existing project visual: workflow, adaptations, core fork/packet metrics,
+and the frontier one-shot cost/time trade-off. The original evidence link remains.
+Navigation supports arrow buttons, keyboard left/right and touch swipes, without
+autoplay. The full table remains available in the linked source, not duplicated here.
+`tools/verify-motion.cjs` now verifies GIF playback/pause and all carousel cards in
+both languages at desktop and narrow widths. The following sections record the
+earlier implementation and unchanged source provenance.
+
 2026-09-21. The owner's latest wording overrides the narrower earlier Gemini intro:
 systems development, AI models and frontier agent research. Removed the supporting
 subtitle, changed the hero link to “我的产品” / “My products”, and updated the daily

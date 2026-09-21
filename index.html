@@ -167,16 +167,20 @@
               role="img"
               aria-label="Rotating blue Tardis police box, inspired by Doctor Who"
             >
-              <div class="tardis-orbit">
-                <div class="tardis-box">
-                  <div class="tardis-face tardis-front"></div>
-                  <div class="tardis-face tardis-right"></div>
-                  <div class="tardis-face tardis-back"></div>
-                  <div class="tardis-face tardis-left"></div>
-                  <div class="tardis-roof"></div>
-                  <div class="tardis-lamp"></div>
-                </div>
-              </div>
+              <img
+                class="tardis-gif"
+                src="资源/tardis-rotation.gif"
+                width="320"
+                height="180"
+                alt=""
+              />
+              <canvas
+                class="tardis-still"
+                width="320"
+                height="180"
+                aria-hidden="true"
+                hidden
+              ></canvas>
             </div>
             <button
               class="motion-toggle"
@@ -522,160 +526,163 @@
             data-category="agent"
             id="prewalk"
           >
-            <aside
-              class="benchmark-panel"
-              aria-labelledby="prewalk-benchmark-title"
+            <div
+              class="project-visual prewalk-carousel"
+              role="region"
+              aria-label="Prewalk overview and benchmark"
+              tabindex="0"
             >
-              <h4 id="prewalk-benchmark-title">
-                <span class="lang-en">What I adapted. What I measured.</span
-                ><span class="lang-zh">我做的适配，以及实际跑出的结果。</span>
-              </h4>
-              <p>
-                <span class="lang-en"
-                  >An independent implementation of Can Bölük’s prewalk
-                  technique: one shared engine for Codex and Claude Code. Codex
-                  inherits the full planner trajectory by default; Claude uses a
-                  scoped executor with the saved packet. I added checkpoint
-                  rejection/retry, planner edit budgets, atomic recovery state
-                  and capability-checked routing.</span
-                ><span class="lang-zh"
-                  >基于 Can Bölük 提出的 prewalk 思路，我做了 Codex / Claude
-                  Code 双宿主独立实现：共用一个引擎，Codex
-                  默认继承规划器完整轨迹，Claude
-                  通过持久化交接包启动限定范围的执行器；同时补上检查点拒绝重试、规划阶段修改预算、原子状态恢复与路由能力校验。</span
-                >
-              </p>
-              <div class="benchmark-metrics">
-                <div>
-                  <strong>13 / 13</strong
-                  ><span class="lang-en">Fork tasks passed</span
-                  ><span class="lang-zh">轨迹继承方案通过</span>
-                </div>
-                <div>
-                  <strong>−14.3%</strong
-                  ><span class="lang-en">Cost vs packet handoff</span
-                  ><span class="lang-zh">成本，相比文档交接</span>
-                </div>
-                <div>
-                  <strong>−19.6%</strong
-                  ><span class="lang-en">Time vs packet handoff</span
-                  ><span class="lang-zh">耗时，相比文档交接</span>
-                </div>
-              </div>
-              <div class="benchmark-table-wrap">
-                <table>
-                  <caption>
+              <div class="prewalk-slides">
+                <div class="prewalk-slide" role="group" aria-label="1 / 4">
+                  <p class="visual-title">prewalk</p>
+                  <div class="visual-flow">
+                    <span class="lang-en">Plan &amp; verify</span
+                    ><span class="lang-zh">规划与验证</span
+                    ><i aria-hidden="true">→</i
+                    ><span class="lang-en">Checkpoint</span
+                    ><span class="lang-zh">状态检查点</span
+                    ><i aria-hidden="true">→</i
+                    ><span class="lang-en">Execute</span
+                    ><span class="lang-zh">接力执行</span>
+                  </div>
+                  <p class="visual-caption">
                     <span class="lang-en"
-                      >SWE-bench Verified subset · 13 tasks × 5 arms = 65
-                      runs</span
+                      >A verified first step.<br />A durable start for the rest
+                      of the work.</span
                     ><span class="lang-zh"
-                      >SWE-bench Verified 子集 · 13 题 × 5 组 = 65 次运行</span
+                      >先验证第一步。<br />为后续任务留下可靠的接力点。</span
                     >
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">
-                        <span class="lang-en">Route</span
-                        ><span class="lang-zh">方案</span>
-                      </th>
-                      <th scope="col">
-                        <span class="lang-en">Passed</span
-                        ><span class="lang-zh">通过</span>
-                      </th>
-                      <th scope="col">
-                        <span class="lang-en">Cost / task</span
-                        ><span class="lang-zh">成本 / 题</span>
-                      </th>
-                      <th scope="col">
-                        <span class="lang-en">Time / task</span
-                        ><span class="lang-zh">耗时 / 题</span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Luna one-shot</th>
-                      <td>12/13</td>
-                      <td>$0.023</td>
-                      <td>437 s</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sol one-shot</th>
-                      <td>13/13</td>
-                      <td>$0.182</td>
-                      <td>522 s</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Packet</th>
-                      <td>13/13</td>
-                      <td>$0.177</td>
-                      <td>925 s</td>
-                    </tr>
-                    <tr class="benchmark-selected">
-                      <th scope="row">
-                        Fork <span class="lang-en">(default)</span
-                        ><span class="lang-zh">（默认）</span>
-                      </th>
-                      <td>13/13</td>
-                      <td>$0.152</td>
-                      <td>743 s</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Plan</th>
-                      <td>13/13</td>
-                      <td>$0.176</td>
-                      <td>763 s</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="benchmark-note">
-                <span class="lang-en"
-                  >Planner: gpt-5.6-sol (medium); executor: gpt-5.6-luna (low).
-                  Windows 11 / Codex CLI 0.152.1; sympy × 7, django × 4, sphinx
-                  × 2. Fork costs 16.4% less than Sol one-shot, but takes longer
-                  (743s vs 522s). Small subset, list-price estimates and
-                  network-sensitive timings; cheap one-shot remains cheapest for
-                  easy tasks. These are recorded runs, not a new benchmark or a
-                  full-suite score.</span
-                ><span class="lang-zh"
-                  >规划器 gpt-5.6-sol（medium），执行器
-                  gpt-5.6-luna（low）；Windows 11 / Codex CLI 0.152.1；sympy 7
-                  题、django 4 题、sphinx 2 题。Fork 比 Sol 单次执行便宜
-                  16.4%，但更慢（743 秒 vs 522
-                  秒）。这是小样本、按公开价格估算成本，耗时受网络影响；简单任务仍是低价模型单次执行最便宜。这里展示已有实测记录，不是新跑的
-                  benchmark，也不是全量榜单成绩。</span
+                  </p>
+                </div>
+                <div
+                  class="prewalk-slide"
+                  role="group"
+                  aria-label="2 / 4"
+                  hidden
                 >
-              </p>
+                  <p class="visual-title">
+                    <span class="lang-en">My adaptation.</span
+                    ><span class="lang-zh">我做的适配。</span>
+                  </p>
+                  <p class="slide-copy">
+                    <span class="lang-en"
+                      >One engine, two native hosts. Codex inherits the
+                      planner’s trajectory; Claude uses a scoped executor with a
+                      saved packet.</span
+                    ><span class="lang-zh"
+                      >一套引擎，适配两个宿主。Codex 继承规划器轨迹；Claude
+                      用持久化交接包启动限定范围的执行器。</span
+                    >
+                  </p>
+                  <p class="visual-caption">
+                    <span class="lang-en"
+                      >Checkpoint rejection/retry, edit budgets, atomic recovery
+                      and capability-checked routing. An independent
+                      implementation of Can Bölük’s technique.</span
+                    ><span class="lang-zh"
+                      >补上检查点拒绝重试、修改预算、原子恢复与路由校验。基于
+                      Can Bölük 思路的独立实现。</span
+                    >
+                  </p>
+                </div>
+                <div
+                  class="prewalk-slide"
+                  role="group"
+                  aria-label="3 / 4"
+                  hidden
+                >
+                  <p class="visual-title">
+                    <span class="lang-en">Less repeated work.</span
+                    ><span class="lang-zh">少走回头路。</span>
+                  </p>
+                  <div class="carousel-metrics">
+                    <div>
+                      <strong>13/13</strong
+                      ><span class="lang-en">Tasks passed</span
+                      ><span class="lang-zh">样本通过</span>
+                    </div>
+                    <div>
+                      <strong>−14.3%</strong><span class="lang-en">Cost</span
+                      ><span class="lang-zh">成本</span>
+                    </div>
+                    <div>
+                      <strong>−19.6%</strong><span class="lang-en">Time</span
+                      ><span class="lang-zh">耗时</span>
+                    </div>
+                  </div>
+                  <p class="visual-caption">
+                    <span class="lang-en"
+                      >Fork vs packet handoff. SWE-bench Verified subset: 13
+                      tasks, 5 arms, 65 recorded runs. Not a full-suite
+                      score.</span
+                    ><span class="lang-zh"
+                      >轨迹继承 vs 文档交接。SWE-bench Verified 子集：13 题、5
+                      组、65 次已有实测，非全量榜单成绩。</span
+                    >
+                  </p>
+                </div>
+                <div
+                  class="prewalk-slide"
+                  role="group"
+                  aria-label="4 / 4"
+                  hidden
+                >
+                  <p class="visual-title">
+                    <span class="lang-en">The trade-off.</span
+                    ><span class="lang-zh">成本与时间的取舍。</span>
+                  </p>
+                  <div class="carousel-metrics two-metrics">
+                    <div>
+                      <strong>−16.4%</strong
+                      ><span class="lang-en">Cost vs Sol one-shot</span
+                      ><span class="lang-zh">成本，相比 Sol 单次执行</span>
+                    </div>
+                    <div>
+                      <strong>743 s</strong
+                      ><span class="lang-en">vs 522 s: slower</span
+                      ><span class="lang-zh">vs 522 秒：耗时更长</span>
+                    </div>
+                  </div>
+                  <p class="visual-caption">
+                    <span class="lang-en"
+                      >Sol (medium) → Luna (low); both pass 13/13. List-price
+                      costs and network-sensitive timings. Cheap one-shot is
+                      cheapest for easy tasks.</span
+                    ><span class="lang-zh"
+                      >Sol（medium）→ Luna（low），两组均通过
+                      13/13。成本按公开价格估算，耗时受网络影响；简单任务仍是低价模型单次执行最便宜。</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-controls" hidden>
+                <button
+                  type="button"
+                  class="carousel-prev"
+                  aria-label="Previous card / 上一张"
+                >
+                  ←</button
+                ><span
+                  class="carousel-status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  >1 / 4</span
+                ><button
+                  type="button"
+                  class="carousel-next"
+                  aria-label="Next card / 下一张"
+                >
+                  →
+                </button>
+              </div>
               <a
-                class="text-link"
+                class="carousel-source"
                 href="https://github.com/TardisBooo/prewalk/blob/561ae57841ad7c9d3a72789c398f7f64b6877312/README.md#-benchmark"
                 target="_blank"
                 rel="noreferrer"
-                ><span class="lang-en"
-                  >Read the benchmark and methodology ↗</span
-                ><span class="lang-zh">查看原始结果与测试条件 ↗</span></a
+                ><span class="lang-en">Full results &amp; methodology ↗</span
+                ><span class="lang-zh">完整结果与测试条件 ↗</span></a
               >
-            </aside>
-            <div class="project-visual">
-              <p class="visual-title">prewalk</p>
-              <div class="visual-flow">
-                <span class="lang-en">Plan &amp; verify</span
-                ><span class="lang-zh">规划与验证</span
-                ><i aria-hidden="true">→</i
-                ><span class="lang-en">Checkpoint</span
-                ><span class="lang-zh">状态检查点</span
-                ><i aria-hidden="true">→</i><span class="lang-en">Execute</span
-                ><span class="lang-zh">接力执行</span>
-              </div>
-              <p class="visual-caption">
-                <span class="lang-en"
-                  >A verified first step.<br />A durable start for the rest of
-                  the work.</span
-                ><span class="lang-zh"
-                  >先验证第一步。<br />为后续任务留下可靠的接力点。</span
-                >
-              </p>
             </div>
             <div class="project-card-top">
               <span class="project-type"
