@@ -34,3 +34,8 @@ available in expandable sections; without JavaScript the full text is shown.
 
 Review evidence is retained at
 `E:\Workspaces\_audits\portfolio-redesign-20260921` (regenerable screenshots and reports).
+
+The bilingual copy was subsequently rewritten in two Gemini rounds and reviewed
+against the original project facts. [Context and review record](docs/gemini-copy-rewrite.md).
+Durable model inputs/outputs: `D:\DataVault\portfolio\editorial\gemini-copy-20260921`.
+Copy review screenshots: `E:\Workspaces\_audits\portfolio-copy-20260921`.

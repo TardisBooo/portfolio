@@ -203,6 +203,7 @@ h1 {
 }
 .hero-line {
   display: block;
+  text-wrap: balance;
 }
 .sketch-word {
   position: relative;

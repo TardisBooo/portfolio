@@ -25,7 +25,7 @@
     details.className = "project-description";
     const summary = document.createElement("summary");
     summary.innerHTML =
-      '<span class="lang-en">The details</span><span class="lang-zh">展开项目细节</span>';
+      '<span class="lang-en">Technical details</span><span class="lang-zh">技术细节</span>';
     details.append(summary);
     paragraphs[0].before(details);
     paragraphs.forEach((paragraph) => details.append(paragraph));
