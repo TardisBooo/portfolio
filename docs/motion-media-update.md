@@ -2,6 +2,14 @@
 
 ## Follow-up: supplied GIF and compact benchmark cards
 
+Final owner correction: the green screen is an extraction background. The site now
+uses `资源/tardis-rotation-transparent.gif`, not the unprocessed original described
+below. FFmpeg processing: `crop=144:180:88:0,format=rgba,colorkey=0x00d600:0.28:0.08,
+despill=type=green:mix=0.5`, followed by transparent palette generation/use (alpha
+threshold 128). All 55 frames and 3.67-second duration are retained. The subject
+crop excludes the right-hand watermark. Reviewed a 55-frame contact sheet and
+the cutout against the site's actual background. Original source remains preserved.
+
 The owner subsequently supplied `C:\Users\MSI-NB\Downloads\x6IRTA.gif` and asked
 for direct replacement. The site now serves the unmodified GIF (601,353 bytes),
 including its green background and watermark. A static canvas frame replaces its

@@ -129,8 +129,8 @@
   place-items: center;
 }
 .tardis-scene {
-  width: min(480px, 100%);
-  aspect-ratio: 16 / 9;
+  width: min(272px, 100%);
+  aspect-ratio: 4 / 5;
   height: auto;
   position: relative;
 }

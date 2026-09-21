@@ -50,8 +50,11 @@
   const renderPlayback = () => {
     if (!gif.complete || !gif.naturalWidth) return;
     const stop = paused || preference.matches || document.hidden || !inView;
-    if (stop && still.hidden)
-      still.getContext("2d").drawImage(gif, 0, 0, still.width, still.height);
+    if (stop && still.hidden) {
+      const context = still.getContext("2d");
+      context.clearRect(0, 0, still.width, still.height);
+      context.drawImage(gif, 0, 0, still.width, still.height);
+    }
     still.hidden = !stop;
     gif.style.visibility = stop ? "hidden" : "visible";
   };

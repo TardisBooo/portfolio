@@ -46,8 +46,9 @@ benchmark comparisons. [Sources and acceptance](docs/motion-media-update.md).
 Durable media: `D:\DataVault\portfolio\media\20260921`.
 Motion review evidence: `E:\Workspaces\_audits\portfolio-motion-20260921`.
 
-The Tardis now uses the owner's supplied `x6IRTA.gif` directly as
-`资源/tardis-rotation.gif`, retaining its original green background and watermark.
+The Tardis uses a transparent cutout of the owner's supplied `x6IRTA.gif` as
+`资源/tardis-rotation-transparent.gif`. Green-screen keying and spill suppression
+retain all 55 frames / 3.67 seconds; a 144×180 crop excludes the watermark area.
 Pause and reduced motion show a static canvas frame. Original file preserved at
 `D:\DataVault\portfolio\media\20260921\tardis-rotation-user.gif` (601,353 bytes).
 
