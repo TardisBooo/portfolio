@@ -39,3 +39,9 @@ The bilingual copy was subsequently rewritten in two Gemini rounds and reviewed
 against the original project facts. [Context and review record](docs/gemini-copy-rewrite.md).
 Durable model inputs/outputs: `D:\DataVault\portfolio\editorial\gemini-copy-20260921`.
 Copy review screenshots: `E:\Workspaces\_audits\portfolio-copy-20260921`.
+
+The latest owner-directed update adds the rotating Tardis transition, reference-led
+motion, current 109-second Möbius launch film, harness-daily mark and sourced prewalk
+benchmark comparisons. [Sources and acceptance](docs/motion-media-update.md).
+Durable media: `D:\DataVault\portfolio\media\20260921`.
+Motion review evidence: `E:\Workspaces\_audits\portfolio-motion-20260921`.
