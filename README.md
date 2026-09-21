@@ -23,3 +23,14 @@ Open `index.html` directly, or serve this directory with any static HTTP server.
 
 Only the public alias **Tardis** is shown. No personal contact data, location,
 education or employment history is included.
+
+## Reference-led redesign
+
+The visual design follows the spacious typography, handwritten accents, tilted media,
+and narrative project layout of arjun-r.com, adapted to Tardis's own work.
+See [the reference study](docs/redesign-study.md) for observations, decisions,
+motion behavior and reproducible browser checks. Technical descriptions remain
+available in expandable sections; without JavaScript the full text is shown.
+
+Review evidence is retained at
+`E:\Workspaces\_audits\portfolio-redesign-20260921` (regenerable screenshots and reports).
