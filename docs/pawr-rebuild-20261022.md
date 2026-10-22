@@ -61,3 +61,11 @@ The experience section precedes the project list. The existing journey anchor
 stays valid. Desktop content width increases from 680px to 880px. The mobile
 single-column layout stays fluid. The stylesheet URL is versioned to refresh
 existing browser caches.
+
+## Academy cover refresh
+
+The AgentTect card now uses a fresh light-theme homepage screenshot of
+<https://academy.viewatom.com/>, captured on 2026-10-22. The cover and course
+button both open that course site. The GitHub Star badge still links to the
+existing source repository. The old cover and course-outline images remain
+in Git. The new filename prevents browsers from reusing the previous image.
