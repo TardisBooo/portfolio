@@ -1,4 +1,4 @@
-import {CACHE_KEY, parseStoredSnapshot, loadStarSnapshot} from './stars.mjs';
+import {CACHE_KEY, parseStoredSnapshot, loadStarSnapshot} from './stars.mjs?v=pawr-20261022';
 
 const body = document.body;
 const languageButtons = [...document.querySelectorAll('[data-language]')];
