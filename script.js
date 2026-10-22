@@ -1,154 +1,97 @@
-(() => {
-  const root = document.documentElement;
-  const body = document.body;
-  const languageButtons = [...document.querySelectorAll("[data-language]")];
-  const images = [...document.querySelectorAll("[data-alt-en]")];
-  const filterButtons = [...document.querySelectorAll("[data-filter]")];
-  const projectCards = [
-    ...document.querySelectorAll(".project-card[data-category]"),
-  ];
-  const projectGrid = document.querySelector("#project-grid");
-  const emptyState = document.querySelector("#filter-empty");
-  const navLinks = [...document.querySelectorAll(".nav-link")];
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
+import {CACHE_KEY, parseStoredSnapshot, loadStarSnapshot} from './stars.mjs';
 
-  // Progressive disclosure preserves the complete project copy in the document.
-  projectCards.forEach((card) => {
-    const content = card.querySelector(".project-card-body");
-    const paragraphs = [
-      ...content.querySelectorAll(":scope > p:not(.project-lead)"),
-    ];
-    if (!paragraphs.length) return;
-    const details = document.createElement("details");
-    details.className = "project-description";
-    const summary = document.createElement("summary");
-    summary.innerHTML =
-      '<span class="lang-en">Technical details</span><span class="lang-zh">技术细节</span>';
-    details.append(summary);
-    paragraphs[0].before(details);
-    paragraphs.forEach((paragraph) => details.append(paragraph));
+const body = document.body;
+const languageButtons = [...document.querySelectorAll('[data-language]')];
+const status = document.querySelector('#stars-status');
+const statusRow = document.querySelector('.stars-status-row');
+const refreshButton = document.querySelector('#refresh-stars');
+let language = 'zh';
+let snapshot = null;
+let state = 'loading';
+let inFlight = false;
+let lastAttempt = 0;
+
+function showStatus() {
+  statusRow.dataset.state = state;
+  if (snapshot) {
+    const date = new Date(snapshot.updatedAt);
+    const locale = language === 'zh' ? 'zh-CN' : 'en';
+    const time = new Intl.DateTimeFormat(locale, {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}).format(date);
+    status.textContent = language === 'zh'
+      ? `${state === 'live' ? 'GitHub 已更新' : '缓存数据'} · ${time}`
+      : `${state === 'live' ? 'Updated from GitHub' : 'Cached data'} · ${time}`;
+  } else {
+    status.textContent = state === 'unavailable'
+      ? (language === 'zh' ? '暂时无法获取 Stars，请在 GitHub 查看。' : 'Stars are unavailable. Check GitHub for current counts.')
+      : (language === 'zh' ? '正在读取 GitHub Stars…' : 'Loading GitHub Stars…');
+  }
+  const label = language === 'zh' ? '刷新 GitHub Stars' : 'Refresh GitHub Stars';
+  refreshButton.setAttribute('aria-label', label);
+  refreshButton.title = label;
+}
+
+function setLanguage(next, updateUrl = true) {
+  language = next === 'en' ? 'en' : 'zh';
+  body.dataset.lang = language;
+  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+  document.title = language === 'zh' ? 'Tardis · Agent、系统与研究' : 'Tardis · Agents, Systems & Research';
+  languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+  document.querySelectorAll('[data-alt-zh]').forEach(image => image.alt = image.dataset[language === 'zh' ? 'altZh' : 'altEn']);
+  try { localStorage.setItem('tardis-portfolio-language', language); } catch {}
+  if (updateUrl) {
+    const url = new URL(location.href);
+    url.searchParams.set('lang', language);
+    history.replaceState({}, '', url);
+  }
+  showStatus();
+}
+
+function paintStars() {
+  const formatter = new Intl.NumberFormat(language === 'zh' ? 'zh-CN' : 'en');
+  const counts = new Map(snapshot?.repos.map(repo => [repo.name.toLowerCase(), repo.stars]) || []);
+  document.querySelectorAll('[data-repo-stars]').forEach(node => {
+    const count = counts.get(node.dataset.repoStars.toLowerCase());
+    node.textContent = Number.isSafeInteger(count) ? formatter.format(count) : '—';
+    node.closest('a').setAttribute('aria-label', `${node.dataset.repoStars}: ${Number.isSafeInteger(count) ? count : 'unknown'} GitHub Stars`);
   });
+  document.querySelector('[data-total-stars]').textContent = snapshot ? formatter.format(snapshot.total) : '—';
+  showStatus();
+}
 
-  const setLanguage = (language, updateUrl = true) => {
-    const next = language === "zh" ? "zh" : "en";
-    body.dataset.lang = next;
-    root.lang = next === "zh" ? "zh-CN" : "en";
-    languageButtons.forEach((button) => {
-      const active = button.dataset.language === next;
-      button.classList.toggle("is-active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-    images.forEach((image) => {
-      image.alt = image.dataset[next === "zh" ? "altZh" : "altEn"];
-    });
-    try {
-      localStorage.setItem("tardis-portfolio-language", next);
-    } catch (_) {}
-    if (updateUrl) {
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", next);
-      window.history.replaceState({}, "", url);
-    }
-  };
-
-  languageButtons.forEach((button) =>
-    button.addEventListener("click", () =>
-      setLanguage(button.dataset.language),
-    ),
-  );
-
-  const setFilter = (filter) => {
-    const next = filter || "all";
-    if (projectGrid) projectGrid.dataset.filter = next;
-    let visible = 0;
-    filterButtons.forEach((button) => {
-      const active = button.dataset.filter === next;
-      button.classList.toggle("is-active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-    projectCards.forEach((card) => {
-      const show = next === "all" || card.dataset.category === next;
-      card.classList.toggle("is-hidden", !show);
-      if (!show)
-        card.querySelectorAll("video").forEach((video) => video.pause());
-      if (show) visible += 1;
-    });
-    if (emptyState) emptyState.hidden = visible > 0;
-  };
-
-  filterButtons.forEach((button) =>
-    button.addEventListener("click", () => setFilter(button.dataset.filter)),
-  );
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => {
-            const current = link.getAttribute("href") === `#${entry.target.id}`;
-            link.classList.toggle("is-current", current);
-            if (current) link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-25% 0px -65% 0px", threshold: 0 },
-    );
-    sections.forEach((section) => observer.observe(section));
-
-    const motionPreference = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    );
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        });
-      },
-      { threshold: 0, rootMargin: "0px 0px -35px 0px" },
-    );
-    if (!motionPreference.matches) {
-      document
-        .querySelectorAll(
-          ".project-card, .section-heading, .thinking-layout, .closing",
-        )
-        .forEach((element) => {
-          element.classList.add("reveal-ready");
-          revealObserver.observe(element);
-        });
-    }
-    motionPreference.addEventListener("change", () => {
-      if (!motionPreference.matches) return;
-      revealObserver.disconnect();
-      document
-        .querySelectorAll(".reveal-ready")
-        .forEach((element) => element.classList.add("is-visible"));
-    });
-
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) entry.target.pause();
-      });
-    });
-    document
-      .querySelectorAll("video")
-      .forEach((video) => videoObserver.observe(video));
+async function refreshStars() {
+  if (inFlight) return;
+  inFlight = true;
+  lastAttempt = Date.now();
+  refreshButton.disabled = true;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  try {
+    snapshot = await loadStarSnapshot({signal:controller.signal});
+    state = 'live';
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify(snapshot)); } catch {}
+  } catch {
+    state = snapshot ? 'cached' : 'unavailable';
+  } finally {
+    clearTimeout(timeout);
+    inFlight = false;
+    refreshButton.disabled = false;
+    paintStars();
   }
+}
 
-  const queryLanguage = new URLSearchParams(window.location.search).get("lang");
-  let initialLanguage =
-    queryLanguage === "zh" || queryLanguage === "en" ? queryLanguage : "en";
-  if (!queryLanguage) {
-    try {
-      initialLanguage =
-        localStorage.getItem("tardis-portfolio-language") || initialLanguage;
-    } catch (_) {}
-  }
-  setLanguage(initialLanguage, false);
-  setFilter("all");
-})();
+const queryLanguage = new URLSearchParams(location.search).get('lang');
+let savedLanguage;
+try {
+  savedLanguage = localStorage.getItem('tardis-portfolio-language');
+  snapshot = parseStoredSnapshot(localStorage.getItem(CACHE_KEY));
+} catch {}
+if (snapshot) state = 'cached';
+setLanguage(queryLanguage || savedLanguage || 'zh', false);
+paintStars();
+languageButtons.forEach(button => button.addEventListener('click', () => {setLanguage(button.dataset.language); paintStars();}));
+refreshButton.addEventListener('click', refreshStars);
+document.querySelector('#year').textContent = new Date().getFullYear();
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && Date.now() - lastAttempt > 300000) refreshStars();
+});
+refreshStars();
