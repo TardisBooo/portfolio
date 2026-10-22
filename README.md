@@ -3,7 +3,7 @@
 Live site: <https://tardisbooo.github.io/portfolio/>.
 
 A buildless, bilingual personal page. The 2026-10-22 owner-directed rebuild
-uses the narrow profile, soft cards and restrained typography of
+uses the centered profile, soft cards and restrained typography of
 [pawr.link/max](https://pawr.link/max) as its layout reference. The content,
 assets, navigation and interactions belong to this portfolio.
 
@@ -20,6 +20,11 @@ assets, navigation and interactions belong to this portfolio.
 The AgentTect course note says “给女朋友设计的课程”. The memory-pool project
 is no longer displayed. No school names, employment dates or private contact
 details were added. Research authorship is linked through the public papers.
+
+The content column now expands to 880px on desktop. Experience precedes
+the projects, with the matching navigation link first. Mobile retains its
+existing compact layout. The first idea now focuses on evaluation, tracing
+and boundaries that let agents do more on their own.
 
 ## Live GitHub Stars
 

@@ -52,3 +52,12 @@ retained with screenshots in the audit directory named in README.
 No raw data, history or unused media is deleted. Earlier design files remain
 in Git. Temporary research and build helpers belong to this task and are
 retained as rebuildable review material, not as the canonical site source.
+
+## Owner refinement
+
+The owner approved the first idea as “做好评测、追踪与边界约束，让 Agent 自主完成更多工作。”. Its English text follows the same meaning.
+The journey heading and navigation label are now “经历” / “Experience”.
+The experience section precedes the project list. The existing journey anchor
+stays valid. Desktop content width increases from 680px to 880px. The mobile
+single-column layout stays fluid. The stylesheet URL is versioned to refresh
+existing browser caches.
